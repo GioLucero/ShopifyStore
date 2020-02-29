@@ -9,13 +9,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var collectionCards: [CollectionCard]
     var body: some View {
-        Text("Hello, World!")
+        
+        NavigationView {
+            ScrollView {
+                
+                ForEach(collectionCards, id: \.self) { productCard in
+                    CollectionCardView(productCard: productCard)
+                }
+            }
+            .navigationBarTitle("Collections")
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(collectionCards:
+            
+            [
+                CollectionCard(withId: 20, withImage: "shopify-robot-testdata", andTitle: "Title", andSubtitle: "Subtitle"),
+                
+                CollectionCard(withId: 15, withImage: "shopify-robot-testdata", andTitle: "Title", andSubtitle: "Subtitle"),
+            ])
     }
 }
