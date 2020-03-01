@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Blueprint for a single product card.
+// Blueprint for a single product card.
 struct CollectionCard: Identifiable, Hashable {
     
     var id: Int

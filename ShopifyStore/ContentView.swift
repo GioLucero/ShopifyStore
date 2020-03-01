@@ -15,7 +15,7 @@ struct ContentView: View {
         
         NavigationView {
             ScrollView {
-                
+                // insert featured banner here
                 ForEach(collectionCards, id: \.self) { productCard in
                     CollectionCardView(productCard: productCard)
                 }
