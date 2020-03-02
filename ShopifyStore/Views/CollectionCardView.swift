@@ -50,6 +50,6 @@ struct CollectionCardView: View {
 struct ProductCardView_Previews: PreviewProvider {
     static var previews: some View {
         
-        CollectionCardView(productCard: CollectionCard(withId: 10, withImage: "shopify-robot-testdata", andTitle: "Title", andSubtitle: "Subtitle"))
+        CollectionCardView(productCard: CollectionCard(withId: 10, withImage: "shopify-robot-testdata", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "The top of the line of aerodynamic products all in the same collection.", andIsOnSale: true))
     }
 }

@@ -16,11 +16,17 @@ struct CollectionCard: Identifiable, Hashable {
     var image: String
     var title: String
     var subtitle: String
+    var description: String
+    var isOnSale: Bool
+   
     
-    init(withId id: Int, withImage image: String, andTitle title: String, andSubtitle subtitle: String) {
+    init(withId id: Int, withImage image: String, andTitle title: String, andSubtitle subtitle: String, andDescription description: String, andIsOnSale isOnSale: Bool) {
+        
+        self.id = id
         self.image = image
         self.title = title
         self.subtitle = subtitle
-        self.id = id
+        self.description = description
+        self.isOnSale = isOnSale
     }
 }

@@ -9,15 +9,32 @@
 import SwiftUI
 
 struct ProductsView: View {
-    @State var productCard: ProductCard
+    @State var productCards: [ProductCard]
     
     var body: some View {
-       Text("Hello World")
+        
+        ScrollView() {
+            VStack(spacing: -20) {
+                ForEach(productCards, id: \.self) { productCard in
+                    ProductCardView(productCard: productCard)
+                }
+            }
+        }
     }
 }
 
 struct ProductsView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductsView(productCard: ProductCard(withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true))
+        ProductsView(productCards:
+            
+            [
+                ProductCard(withId: 15, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true),
+        
+                ProductCard(withId: 20, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true),
+                ProductCard(withId: 20, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true),
+                ProductCard(withId: 20, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true),
+                ProductCard(withId: 20, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true),
+                ProductCard(withId: 20, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true)
+            ])
     }
 }

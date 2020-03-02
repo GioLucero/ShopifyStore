@@ -30,9 +30,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(collectionCards:
             
             [
-                CollectionCard(withId: 20, withImage: "shopify-robot-testdata", andTitle: "Title", andSubtitle: "Subtitle"),
+                CollectionCard(withId: 20, withImage: "shopify-robot-testdata", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false),
                 
-                CollectionCard(withId: 15, withImage: "shopify-robot-testdata", andTitle: "Title", andSubtitle: "Subtitle"),
+                CollectionCard(withId: 15, withImage: "shopify-robot-testdata", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false),
             ])
     }
 }

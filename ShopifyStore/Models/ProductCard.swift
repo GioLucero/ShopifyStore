@@ -8,7 +8,8 @@
 
 import UIKit
 
-struct ProductCard {
+struct ProductCard: Hashable, Identifiable {
+    var id: Int
     
     var title: String
     var vendorName: String
@@ -17,7 +18,9 @@ struct ProductCard {
     var image: String
     var isFavourite: Bool
     
-    init(withtitle title: String, andVendorName vendor: String, andPrice price: Double, andQuantity quantity: Int, andImage image: String, andIsFavourite isFavourite: Bool) {
+    init(withId id: Int, withtitle title: String, andVendorName vendor: String, andPrice price: Double, andQuantity quantity: Int, andImage image: String, andIsFavourite isFavourite: Bool) {
+        
+        self.id = id
         self.title = title
         self.vendorName = vendor
         self.price = price

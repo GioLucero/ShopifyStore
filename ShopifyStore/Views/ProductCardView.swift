@@ -47,15 +47,15 @@ struct ProductCardView: View {
                     .foregroundColor(.blue)
             }
     }
-    .overlay(
-    RoundedRectangle(cornerRadius: 20)
-    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 1))
-    .padding()
+//    .overlay(
+//    RoundedRectangle(cornerRadius: 20)
+//    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 1))
+//    .padding()
 }
 }
 
 struct ProductView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductCardView(productCard: ProductCard(withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.5, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true))
+        ProductCardView(productCard: ProductCard(withId: 10, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.5, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true))
     }
 }
