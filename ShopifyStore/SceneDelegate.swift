@@ -24,9 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let productCards: [CollectionCard] =
         
         [
-            CollectionCard(withId: 30, withImage: "shopify-robot-testdata", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false),
+            CollectionCard(withId: 30, withImage: "shopify-robot-testdata", andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false),
             
-            CollectionCard(withId: 40, withImage: "shopify-robot-testdata", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false)
+            CollectionCard(withId: 40, withImage: "shopify-robot-testdata", andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false)
         ]
         
         let contentView = ContentView(collectionCards: productCards)

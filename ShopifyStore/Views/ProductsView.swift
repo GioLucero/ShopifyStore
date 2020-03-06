@@ -13,13 +13,16 @@ struct ProductsView: View {
     
     var body: some View {
         
-        ScrollView() {
-            VStack(spacing: -20) {
-                ForEach(productCards, id: \.self) { productCard in
-                    ProductCardView(productCard: productCard)
+        NavigationView {
+            List {
+                VStack(spacing: -20) {
+                    ForEach(productCards, id: \.self) { productCard in
+                        ProductCardView(productCard: productCard)
+                    }
                 }
             }
         }
+         .navigationBarTitle("Products")
     }
 }
 

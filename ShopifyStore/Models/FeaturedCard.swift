@@ -11,19 +11,16 @@ import UIKit
 struct FeaturedCard {
     
     var title: String
-    var description: String
-    var footer: String
-    var image: String
-    var sale: Bool
+    var isLimitedTime: Bool
+    var isSale: Bool
     
-    init(withTitle title: String, andDescription description: String, andFooter footer: String, andImage image: String, andSale sale: Bool) {
+    var logo: String
+    
+    init(withTitle title: String, andIsLimitedTime isLimitedTime: Bool, andIsSale isSale: Bool, andLogo logo: String) {
+        
         self.title = title
-        self.description = description
-        self.footer = footer
-        self.image = image
-        self.sale = sale
+        self.isLimitedTime = isLimitedTime
+        self.isSale = isSale
+        self.logo = logo
     }
-    
-
-    
 }
