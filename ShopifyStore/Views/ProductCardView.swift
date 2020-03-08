@@ -20,22 +20,24 @@ struct ProductCardView: View {
                 .frame(width: 100, height: 100)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 1))
+                        .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 1))
+                .foregroundColor(.black)
                 .padding()
-        
-                
+                .padding(.horizontal, -10)
+            
             
             VStack(alignment: .leading, spacing: 2) {
                 Text(productCard.title)
                     .foregroundColor(.primary)
-                    .font(.system(size: 20, weight: .heavy, design: .default))
+                    .font(.system(size: 18, weight: .heavy, design: .default))
                 
                 Text("By: \(productCard.vendorName)")
-                    .font(.headline)
+                    .font(.system(size: 15, weight: .regular, design: .default))
                     .foregroundColor(.secondary)
                 
                 Text("CDN " + String(format: "%.2f", productCard.price))
-                    .font(.system(size: 25, weight: .regular, design: .default))
+                    .font(.system(size: 20, weight: .semibold, design: .default))
+                    .foregroundColor((Color(.sRGB, red: 174/255, green: 22/255, blue: 0/255, opacity: 0.75)))
                 
                 Text("In stock: \(productCard.quantity)")
                     .font(.subheadline)
@@ -43,24 +45,31 @@ struct ProductCardView: View {
             }
             Spacer()
             
-            if productCard.isFavourite {
-                Image(systemName: productCard.isFavourite ? "heart.fill" : "heart")
-                    .font(.title)
-                    .padding()
-                    .foregroundColor(.blue)
-            } else {
-                Image(systemName: "heart")
-                    .font(.title)
-                    .padding()
-                    .foregroundColor(.blue)
-            }
+            //            if productCard.isFavourite {
+            //                Image(systemName: productCard.isFavourite ? "heart.fill" : "heart")
+            //                    .font(.title)
+            //                    .padding()
+            //                    .foregroundColor(.blue)
+            //            } else {
+            //                Image(systemName: "heart")
+            //                    .font(.title)
+            //                    .padding()
+            //                    .foregroundColor(.blue)
+            //            }
+            
+            Text("GET")
+                .fontWeight(.bold)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 5)
+                .foregroundColor(.blue)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 2))
+                .padding(.horizontal)
+            
+            
+        }.padding(10)
     }
-    .padding(10)
-//    .overlay(
-//    RoundedRectangle(cornerRadius: 20)
-//    .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 1))
-//    .padding()
-}
 }
 
 struct ProductView_Previews: PreviewProvider {

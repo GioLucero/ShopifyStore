@@ -9,65 +9,128 @@
 import SwiftUI
 
 struct CollectionFeaturedCard: View {
-    @State var collectionCard: CollectionCard
+    
+    @Binding var collectionCard: CollectionCard
     
     var body: some View {
-        ZStack {
-            // full view
-            VStack(spacing: 1) {
-                // Title and Subtitle
-                VStack(spacing: 1) {
-                    HStack {
-                        Text(collectionCard.title)
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding(.top)
-                            
-                            
-                        Spacer()
-                        }
-
-                        HStack {
-                            Image(systemName: "flame.fill")
-                                .foregroundColor(.orange)
-
-                            Text(collectionCard.subtitle)
-                            .font(.subheadline)
-                            .foregroundColor(.white)
-                            
-                            Spacer()
-                        }
+        ScrollView {
+            GeometryReader { geometry in
+                VStack {
+                    if geometry.frame(in: .global).minY <= 0 {
+                        Image("Featured-Card-Bg")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
+                            .clipped()
+                            .offset(y: -geometry.frame(in: .global).minY)
+                    } else {
+                        Image("Featured-Card-Bg")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
+                            .clipped()
+                            .offset(y: -geometry.frame(in: .global).minY)
                     }
-                    .padding()
-                    .padding(.bottom)
-
-                
-                Image(collectionCard.image)
-                    .resizable()
-                    .frame(width: 300, height: 300)
-                    .offset(y:-60)
-        
-//
-//                Text(collectionCard.description)
-//                    .font(.subheadline)
-//                    .foregroundColor(.white)
-//                    .multilineTextAlignment(.center)
-//                    .padding()
-
-//                if collectionCard.isOnSale {
-//                    Text("Limited Time")
-//                        .font(.title)
-//                        .foregroundColor(.green)
-//                }
+                }
             }
-            .background(Image(collectionCard.backgroundImage))
+            .frame(height: 400)
+            
+            VStack(alignment: .leading) {
+                HStack {
+                    Image("shopify-robot-testdata")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 60, height: 60)
+                        .clipped()
+                        .cornerRadius(10)
+                    VStack(alignment: .leading) {
+                        Text("Article by")
+                            .font(.custom("AvenirNext-Regular", size: 15))
+                            .foregroundColor(.gray)
+                        Text("Johne Doe")
+                            .font(.custom("AvenirNext-Demibold", size: 15))
+                    }
+                }
+            }
+            .frame(width: 350)
         }
     }
 }
 
-struct CollectionFeaturedCard_Previews: PreviewProvider {
-    static var previews: some View {
-        CollectionFeaturedCard(collectionCard: CollectionCard(withId: 5, withImage: "shopify-robot-testdata", andBackgroundImage: "space-shopify", andTitle: "Awesome Collection", andSubtitle: "Top Rated Collection", andDescription: "The top of the line of aerodynamic products all in the same collection.", andIsOnSale: true))
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        ZStack {
+//            // full view
+//            VStack(spacing: 1) {
+//                // Title and Subtitle
+//                VStack(spacing: 1) {
+//                    HStack {
+//                        Text(collectionCard.title)
+//                            .font(.title)
+//                            .fontWeight(.bold)
+//                            .foregroundColor(.white)
+//                            .padding(.top)
+//
+//
+//                        Spacer()
+//                        }
+//
+//                        HStack {
+//                            Image(systemName: "flame.fill")
+//                                .foregroundColor(.orange)
+//
+//                            Text(collectionCard.subtitle)
+//                            .font(.subheadline)
+//                            .foregroundColor(.white)
+//
+//                            Spacer()
+//                        }
+//                    }
+//                    .padding()
+//                .padding(.bottom)
+//
+//
+//                Image(collectionCard.image)
+//                    .resizable()
+//                    .frame(width: 300, height: 300)
+//                    .offset(y:-30)
+//
+////
+////                Text(collectionCard.description)
+////                    .font(.subheadline)
+////                    .foregroundColor(.white)
+////                    .multilineTextAlignment(.center)
+////                    .padding()
+//
+////                if collectionCard.isOnSale {
+////                    Text("Limited Time")
+////                        .font(.title)
+////                        .foregroundColor(.green)
+////                }
+//            }
+//            .background(Image(collectionCard.backgroundImage))
+//            .edgesIgnoringSafeArea(.all)
+//            .padding(.vertical, 0)
+//        }
+//    }
+//}

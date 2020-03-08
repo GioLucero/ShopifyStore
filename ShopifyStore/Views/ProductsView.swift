@@ -9,35 +9,46 @@
 import SwiftUI
 
 struct ProductsView: View {
-    @State var productCards: [ProductCard]
+    @Binding var productCards: [ProductCard]
     
     var body: some View {
         
-        NavigationView {
-            List {
-                VStack(spacing: -20) {
-                    ForEach(productCards, id: \.self) { productCard in
-                        ProductCardView(productCard: productCard)
-                    }
+        VStack {
+            
+            PreventCollapseView()
+            
+            VStack {
+                HStack {
+                    Text("Products")
+                    .font(.system(size: 30, weight: .heavy, design: .default))
+                    .lineLimit(nil)
+                    .padding(.horizontal, 13)
+                    
+                    Spacer()
                 }
+                
+                ForEach(productCards, id: \.self) { productCard in
+                    ProductCardView(productCard: productCard)
+                    
+                    
+                    //            .navigationBarTitle("Products")
+                }
+                    
+                .padding(.top, -10)
             }
         }
-         .navigationBarTitle("Products")
     }
 }
 
-struct ProductsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductsView(productCards:
-            
-            [
-                ProductCard(withId: 15, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true),
-        
-                ProductCard(withId: 20, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true),
-                ProductCard(withId: 20, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true),
-                ProductCard(withId: 20, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true),
-                ProductCard(withId: 20, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true),
-                ProductCard(withId: 20, withtitle: "Banchode", andVendorName: "Curry Banca", andPrice: 34.50, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true)
-            ])
+
+
+struct PreventCollapseView: View {
+    
+    private var mostlyClear = Color(UIColor(white: 0.0, alpha: 0.0005))
+    
+    var body: some View {
+        Rectangle()
+            .fill(mostlyClear)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 1)
     }
 }
