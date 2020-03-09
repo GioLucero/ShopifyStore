@@ -22,7 +22,8 @@ struct ProductsView: View {
                     Text("Products")
                     .font(.system(size: 30, weight: .heavy, design: .default))
                     .lineLimit(nil)
-                    .padding(.horizontal, 13)
+                    .padding(.horizontal, 24)
+                    .padding(.top, -10)
                     
                     Spacer()
                 }
@@ -34,7 +35,7 @@ struct ProductsView: View {
                     //            .navigationBarTitle("Products")
                 }
                     
-                .padding(.top, -10)
+                .padding(.top, -20)
             }
         }
     }

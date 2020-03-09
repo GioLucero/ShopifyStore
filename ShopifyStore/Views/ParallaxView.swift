@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ParallaxView: View {
     @State var productCards: [ProductCard]
+    @State var collectionCard: CollectionCard
+
     
     var body: some View {
         ScrollView {
@@ -37,7 +39,7 @@ struct ParallaxView: View {
             VStack(alignment: .leading) {
                 Spacer()
                 HStack {
-                    Image("shopify-robot-testdata")
+                    Image(collectionCard.image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 60, height: 60)
@@ -47,13 +49,13 @@ struct ParallaxView: View {
                         Text("Featured")
                             .font(.custom("AvenirNext-Regular", size: 15))
                             .foregroundColor(.gray)
-                        Text("Awesome Collection")
+                        Text(collectionCard.title)
                             .font(.custom("AvenirNext-Demibold", size: 15))
                     }
                     Spacer()
                 }
-                .background(Color.black.opacity(0.1))
-                    
+                .background(LinearGradient(gradient: Gradient(colors: [Color(.sRGB, red: 183/255, green: 283/255, blue: 169/255, opacity: 0.85),.white]), startPoint: .trailing, endPoint: .leading))
+                .offset(x: 10, y: -9)
                 .padding(.horizontal, 10)
                 ProductsView(productCards: $productCards)
             }
@@ -75,7 +77,9 @@ struct ParallaxView_Previews: PreviewProvider {
                 ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
                 ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false)
                 
-        ])
+        ], collectionCard: CollectionCard(withId: 1, withImage: "shopify-robot-testdata", andBackgroundImage: "", andTitle: "Awesome Collection", andSubtitle: "", andDescription: "", andIsOnSale: false))
+        
+        
     }
 }
 

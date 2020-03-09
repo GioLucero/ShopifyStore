@@ -17,7 +17,9 @@ struct CollectionCardView: View {
             Image(productCard.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .background(Color(.sRGB, red: 150/255, green: 180/255, blue: 250/255, opacity: 0.75))
+                .background(Image("Featured-Card-Bg"))
+                    .clipped()
+                    .aspectRatio(contentMode: .fit)
             
             HStack {
                 VStack(alignment: .leading) {
@@ -40,7 +42,7 @@ struct CollectionCardView: View {
             RoundedRectangle(cornerRadius: 15)
                 .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 1)
         )
-            .padding(.top)
+            .padding(.top, 30)
             .padding(.horizontal, 30)
     }
 }
