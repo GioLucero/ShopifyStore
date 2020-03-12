@@ -23,7 +23,7 @@ struct ProductCardView: View {
                         .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 1))
                 .foregroundColor(.black)
                 .padding()
-                .padding(.horizontal, -10)
+                .padding(.horizontal, -5)
             
             
             VStack(alignment: .leading, spacing: 2) {

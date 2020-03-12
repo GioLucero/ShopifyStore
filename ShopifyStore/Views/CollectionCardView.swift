@@ -18,8 +18,8 @@ struct CollectionCardView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .background(Image("Featured-Card-Bg"))
-                    .clipped()
-                    .aspectRatio(contentMode: .fit)
+                .clipped()
+                .aspectRatio(contentMode: .fit)
             
             HStack {
                 VStack(alignment: .leading) {
@@ -44,6 +44,7 @@ struct CollectionCardView: View {
         )
             .padding(.top, 30)
             .padding(.horizontal, 30)
+        
     }
 }
 

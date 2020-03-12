@@ -11,10 +11,11 @@ import SwiftUI
 struct ParallaxView: View {
     @State var productCards: [ProductCard]
     @State var collectionCard: CollectionCard
-
+    
     
     var body: some View {
         ScrollView {
+            // Parallax Effect on featured card
             GeometryReader { geometry in
                 VStack {
                     if geometry.frame(in: .global).minY <= 0 {
@@ -36,6 +37,7 @@ struct ParallaxView: View {
             }
             .frame(height: 400)
             
+            // Collection banner w/ name and subtitle
             VStack(alignment: .leading) {
                 Spacer()
                 HStack {
@@ -47,7 +49,7 @@ struct ParallaxView: View {
                         .cornerRadius(10)
                     VStack(alignment: .leading) {
                         Text("Featured")
-                            .font(.custom("AvenirNext-Regular", size: 15))
+                            .font(.custom("AvenirNext-Medium", size: 15))
                             .foregroundColor(.gray)
                         Text(collectionCard.title)
                             .font(.custom("AvenirNext-Demibold", size: 15))
@@ -55,7 +57,7 @@ struct ParallaxView: View {
                     Spacer()
                 }
                 .background(LinearGradient(gradient: Gradient(colors: [Color(.sRGB, red: 183/255, green: 283/255, blue: 169/255, opacity: 0.85),.white]), startPoint: .trailing, endPoint: .leading))
-                .offset(x: 10, y: -9)
+                .offset(x: 10, y: -8)
                 .padding(.horizontal, 10)
                 ProductsView(productCards: $productCards)
             }
@@ -82,12 +84,3 @@ struct ParallaxView_Previews: PreviewProvider {
         
     }
 }
-
-let articleContent =
-    
-"""
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-At vero eos et accusam et justo duo dolores et ea rebum.
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-"""

@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             CollectionCard(withId: 40, withImage: "shopify-robot-testdata", andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false)
         ]
         
-        let contentView = ContentView(collectionCards: productCards)
+        let contentView = ContentView(collectionCards: productCards, searchBar: SearchBarView())
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
