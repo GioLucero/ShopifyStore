@@ -12,22 +12,26 @@ struct ContentView: View {
     
     @State var collectionCards: [CollectionCard]
     @State var searchBar: SearchBarView
-    
     var body: some View {
         
         NavigationView {
-            NavigationLink(destination: ParallaxView())
             ScrollView {
-                 SearchBarView()
+                SearchBarView()
                 // insert featured banner here
                 ForEach(collectionCards, id: \.self) { productCard in
-                    CollectionCardView(productCard: productCard)
+                    VStack {
+                        NavigationLink(destination: ParallaxView(productCards: products, collectionCard: collections)) {
+                            CollectionCardView(productCard: productCard)
+                        }
+                    .buttonStyle(PlainButtonStyle())
+                    }
                 }
             }
             .navigationBarTitle("Collections")
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -41,3 +45,19 @@ struct ContentView_Previews: PreviewProvider {
         ], searchBar: SearchBarView())
     }
 }
+
+
+var products =
+    
+    [
+        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
+        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
+        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
+        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
+        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
+        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
+        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false)
+        
+]
+
+var collections = CollectionCard(withId: 1, withImage: "shopify-robot-testdata", andBackgroundImage: "", andTitle: "Awesome Collection", andSubtitle: "", andDescription: "", andIsOnSale: false)
