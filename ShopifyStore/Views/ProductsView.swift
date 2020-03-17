@@ -11,6 +11,32 @@ import SwiftUI
 struct ProductsView: View {
     @Binding var productCards: [ProductCard]
     
+    @ObjectBinding var productDataManager = ProductDataManager()
+    
+    private var stateContent: AnyView {
+        switch productDataManager.state {
+        case .loading:
+            return AnyView(
+                ActivityIndicator(style: .medium)
+            )
+        case .fetched(let result):
+            switch result {
+            case .failure(let error):
+                return AnyView(
+                    Text(error.localizedDescription)
+                )
+            case .success(let root):
+                return AnyView(
+                    List(root.products) { product in
+                        NavigationButton(destination: ProductDetailsView(product: product)) {
+                            ProductRow(product: product)
+                        }
+                    }
+                )
+            }
+        }
+    }
+    
     var body: some View {
         
         VStack {
