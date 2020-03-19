@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 struct ProductCard: Hashable, Identifiable {
     var id: Int
@@ -28,5 +29,18 @@ struct ProductCard: Hashable, Identifiable {
         self.image = image
         self.isFavourite = isFavourite
     }
+    
+//    init(fromJSON json: JSON) {
+//        self.init(
+//            id: json["id"].intValue,
+//            title: json["title"].stringValue,
+//            vendorName: json["vendor"].stringValue,
+//            price: json["price"].doubleValue,
+//            quantity: json["inventory_quantity"].intValue,
+//            image: UIImage(
+//                contentsOfFile: json["image"]["src"].stringValue
+//            )
+//        )
+//    }
 }
 

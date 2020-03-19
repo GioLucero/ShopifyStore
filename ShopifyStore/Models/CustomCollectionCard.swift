@@ -1,15 +1,23 @@
 //
-//  CollectionCard.swift
+//  CustomCollectionCard.swift
 //  ShopifyStore
 //
 //  Created by Gio Lucero on 2020-03-19.
 //  Copyright © 2020 Gio Lucero. All rights reserved.
 //
 
+//
+//  File.swift
+//  ShopifyStore
+//
+//  Created by Gio Lucero on 2020-02-29.
+//  Copyright © 2020 Gio Lucero. All rights reserved.
+//
+
 import UIKit
 
 // Blueprint for a single product card.
-struct CollectionCard: Identifiable, Hashable {
+struct CustomCollectionCard: Identifiable, Hashable {
     
     var id: Int
     
@@ -31,7 +39,7 @@ struct CollectionCard: Identifiable, Hashable {
         self.description = description
         self.isOnSale = isOnSale
     }
-//
+//    
 //    init(fromJSON json: JSON) {
 //           self.init(
 //            id: json["id"].intValue,

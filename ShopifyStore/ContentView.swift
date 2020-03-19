@@ -9,9 +9,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @State var collectionCards: [CollectionCard]
     @State var searchBar: SearchBarView
+    
+    var networkManager = NetworkManager()
+    
     var body: some View {
         
         NavigationView {
