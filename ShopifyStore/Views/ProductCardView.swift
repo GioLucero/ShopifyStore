@@ -13,7 +13,6 @@ struct ProductCardView: View {
     
     var body: some View {
         HStack() {
-            
             // learn how to manipulate the image without changing the padding
             Image(productCard.image)
                 .resizable()
@@ -72,8 +71,8 @@ struct ProductCardView: View {
     }
 }
 
-struct ProductView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductCardView(productCard: ProductCard(withId: 10, withtitle: "Concrete Clock", andVendorName: "Curry Banca", andPrice: 34.5, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true))
-    }
-}
+//struct ProductView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProductCardView(productCard: ProductCard(withId: 10, withtitle: "Concrete Clock", andVendorName: "Curry Banca", andPrice: 34.5, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true))
+//    }
+//}

@@ -19,7 +19,7 @@ struct ProductCard: Hashable, Identifiable {
     var image: String
     var isFavourite: Bool
     
-    init(withId id: Int, withtitle title: String, andVendorName vendor: String, andPrice price: Double, andQuantity quantity: Int, andImage image: String, andIsFavourite isFavourite: Bool) {
+    init(withId id: Int, withtitle title: String, andVendorName vendor: String, andPrice price: Double, andQuantity quantity: Int, andImage image: String, andIsFavourite isFavourite: Bool = false) {
         
         self.id = id
         self.title = title
@@ -30,17 +30,34 @@ struct ProductCard: Hashable, Identifiable {
         self.isFavourite = isFavourite
     }
     
-//    init(fromJSON json: JSON) {
-//        self.init(
-//            id: json["id"].intValue,
-//            title: json["title"].stringValue,
-//            vendorName: json["vendor"].stringValue,
-//            price: json["price"].doubleValue,
-//            quantity: json["inventory_quantity"].intValue,
-//            image: UIImage(
-//                contentsOfFile: json["image"]["src"].stringValue
-//            )
-//        )
-//    }
+    init(withJSON json: JSON) {
+        self.init(
+             withId: json["id"].intValue,
+             withtitle: json["title"].stringValue,
+             andVendorName: json["vendor"].stringValue,
+             andPrice: json["price"].doubleValue,
+             andQuantity: json["inventory_quantity"].intValue,
+             andImage: json["image"]["src"].stringValue
+        )
+    }
 }
 
+
+
+
+
+
+
+//
+//init(fromJSON json: JSON) {
+//    self.init(
+//        id: json["id"].intValue,
+//        title: json["title"].stringValue,
+//        vendorName: json["vendor"].stringValue,
+//        price: json["price"].doubleValue,
+//        quantity: json["inventory_quantity"].intValue,
+//        image: UIImage(
+//            contentsOfFile: json["image"]["src"].stringValue
+//        )
+//    )
+//}

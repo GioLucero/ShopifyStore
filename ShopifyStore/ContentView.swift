@@ -22,7 +22,7 @@ struct ContentView: View {
                 // insert featured banner here
                 ForEach(collectionCards, id: \.self) { productCard in
                     VStack {
-                        NavigationLink(destination: ParallaxView(productCards: products, collectionCard: collections)) {
+                        NavigationLink(destination: ParallaxView(collectionCard: collections)) {
                             CollectionCardView(productCard: productCard)
                         }
                     .buttonStyle(PlainButtonStyle())

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+
 
 // Blueprint for a single product card.
 struct CollectionCard: Identifiable, Hashable {
@@ -21,7 +23,7 @@ struct CollectionCard: Identifiable, Hashable {
     var isOnSale: Bool
    
     
-    init(withId id: Int, withImage image: String, andBackgroundImage backgroundImage: String, andTitle title: String, andSubtitle subtitle: String, andDescription description: String, andIsOnSale isOnSale: Bool) {
+    init(withId id: Int, withImage image: String, andBackgroundImage backgroundImage: String, andTitle title: String, andSubtitle subtitle: String, andDescription description: String, andIsOnSale isOnSale: Bool = false) {
         
         self.id = id
         self.image = image
@@ -31,13 +33,15 @@ struct CollectionCard: Identifiable, Hashable {
         self.description = description
         self.isOnSale = isOnSale
     }
-//
-//    init(fromJSON json: JSON) {
-//           self.init(
-//            id: json["id"].intValue,
-//            title: json["title"].stringValue,
-//            subtitle: json["sort_order"].stringValue,
-//            description: json["body_html"].stringValue
-//        )
-//    }
+    
+    init(withJSON json: JSON) {
+        self.init(
+            withId: json["id"].intValue,
+            withImage: json["image"]["src"].stringValue,
+            andBackgroundImage: "Featured-Card-Bg",
+            andTitle: json["title"].stringValue,
+            andSubtitle: json["sort_order"].stringValue,
+            andDescription: json["body_html"].stringValue
+        )
+    }
 }

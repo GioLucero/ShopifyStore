@@ -8,8 +8,9 @@
 
 import SwiftUI
 
+
 struct ProductsView: View {
-    @Binding var productCards: [ProductCard]
+    @EnvironmentObject var productsCardViewModel: ProductsViewModel
     
     var body: some View {
         
@@ -28,7 +29,7 @@ struct ProductsView: View {
                     Spacer()
                 }
                 
-                ForEach(productCards, id: \.self) { productCard in
+                ForEach(productsCardViewModel.productCards, id: \.self) { productCard in
                     ProductCardView(productCard: productCard)
                     
                     

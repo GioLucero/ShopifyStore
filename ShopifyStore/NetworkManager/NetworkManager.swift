@@ -7,6 +7,8 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
+
 
 /// Handles all server related stuff.
 class NetworkManager {
@@ -23,7 +25,7 @@ class NetworkManager {
   public static let accessToken: String = "c32313df0d0ef512ca64d5b336a0d7c6"
     
 
-    private func getCardData(withURL url: String) {
+    public func getCardData(withURL url: String, completion: @escaping (JSON) -> Void) {
 
         // Parameters being set to perform the GET request
         let parameters: Parameters = [
@@ -32,33 +34,35 @@ class NetworkManager {
         // Defaults to .get
 
     
-    let request = AF.request(url, parameters: parameters)
+        let request = AF.request(url, parameters: parameters)
         request.responseJSON { response in
             // DispatchQueue executes a line of code in the main thread (primary source of execution)
             DispatchQueue.main.async {
                 // once the request is executed, we want to let it run till a json response is found
                 if let json = response.value {
-                    print(json)
+                    completion(JSON(json))
                 // if the json is not found, return an error
                 } else if let error = response.error {
-                    print(error.localizedDescription)
+                    completion(JSON(error.localizedDescription))
                 }
             }
         }
     }
     
     // creating a func for each API request
+
     
-    public func getProductData() {
-        self.getCardData(withURL: NetworkManager.productURL)
-        
-    }
-    
-    public func getCustomCollectionData() {
-        self.getCardData(withURL: NetworkManager.customCollectURL)
-    }
-    
-    public func getCollectionData() {
-        self.getCardData(withURL: NetworkManager.collectionURL)
-    }
+//    public func getCustomCollectionData() {
+//        self.getCardData(withURL: NetworkManager.customCollectURL)
+//    }
+//
+//    public func getCollectionData() {
+//        self.getCardData(withURL: NetworkManager.collectionURL)
+//    }
 }
+
+
+
+
+
+
