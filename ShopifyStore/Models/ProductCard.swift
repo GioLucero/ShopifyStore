@@ -28,36 +28,42 @@ struct ProductCard: Hashable, Identifiable {
         self.quantity = quantity
         self.image = image
         self.isFavourite = isFavourite
+        
     }
     
     init(withJSON json: JSON) {
         self.init(
-             withId: json["id"].intValue,
-             withtitle: json["title"].stringValue,
-             andVendorName: json["vendor"].stringValue,
-             andPrice: json["price"].doubleValue,
-             andQuantity: json["inventory_quantity"].intValue,
-             andImage: json["image"]["src"].stringValue
+            withId: json["id"].intValue,
+            withtitle: json["title"].stringValue,
+            andVendorName: json["vendor"].stringValue,
+            andPrice: json["price"].doubleValue,
+            andQuantity: json["inventory_quantity"].intValue,
+            andImage: json["image"]["src"].stringValue
         )
     }
 }
 
-
-
-
-
-
-
-//
-//init(fromJSON json: JSON) {
-//    self.init(
-//        id: json["id"].intValue,
-//        title: json["title"].stringValue,
-//        vendorName: json["vendor"].stringValue,
-//        price: json["price"].doubleValue,
-//        quantity: json["inventory_quantity"].intValue,
-//        image: UIImage(
-//            contentsOfFile: json["image"]["src"].stringValue
-//        )
-//    )
-//}
+extension ProductCard {
+    
+    class Variant {
+        var price: Double
+        var quantity: Int
+        var productImage: UIImage
+        
+        
+        init(withPrice price: Double, andQuantity quantity: Int, andProductImage productImage: UIImage) {
+            self.price = price
+            self.quantity = quantity
+            self.productImage = productImage
+        }
+        
+        convenience init(fromJSON json: JSON) {
+            self.init(
+                withPrice: json["price"].doubleValue,
+                andQuantity: json["inventory_quantity"].intValue,
+                andProductImage: UIImage(
+                    imageLiteralResourceName: json["image"]["src"].stringValue)
+            )
+        }
+    }
+}

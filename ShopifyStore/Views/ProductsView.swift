@@ -21,10 +21,10 @@ struct ProductsView: View {
             VStack {
                 HStack {
                     Text("Products")
-                    .font(.system(size: 30, weight: .heavy, design: .default))
-                    .lineLimit(nil)
-                    .padding(.horizontal, 24)
-                    .padding(.top, -10)
+                        .font(.system(size: 30, weight: .heavy, design: .default))
+                        .lineLimit(nil)
+                        .padding(.horizontal, 24)
+                        .padding(.top, -10)
                     
                     Spacer()
                 }
@@ -32,11 +32,9 @@ struct ProductsView: View {
                 ForEach(productsCardViewModel.productCards, id: \.self) { productCard in
                     ProductCardView(productCard: productCard)
                     
-                    
-                    //            .navigationBarTitle("Products")
                 }
                     
-                .padding(.top, -20)
+                .padding(.top, -10)
             }
         }
     }

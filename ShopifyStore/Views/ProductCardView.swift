@@ -28,7 +28,7 @@ struct ProductCardView: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(productCard.title)
                     .foregroundColor(.primary)
-                    .font(.system(size: 18, weight: .heavy, design: .default))
+                    .font(.system(size: 14, weight: .heavy, design: .default))
                 
                 Text("By: \(productCard.vendorName)")
                     .font(.system(size: 15, weight: .regular, design: .default))
