@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840C2717242C5C8E004E6E5B /* Collects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C2716242C5C8E004E6E5B /* Collects.swift */; };
+		840C2719242C5CDF004E6E5B /* CollectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C2718242C5CDF004E6E5B /* CollectsViewModel.swift */; };
 		841D62C02416ACD90000624E /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D62BF2416ACD90000624E /* TabBarView.swift */; };
 		841D62C3241D59270000624E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D62C2241D59270000624E /* NetworkManager.swift */; };
 		841D62C6241D59920000624E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 841D62C5241D59920000624E /* Alamofire */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840C2716242C5C8E004E6E5B /* Collects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collects.swift; sourceTree = "<group>"; };
+		840C2718242C5CDF004E6E5B /* CollectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectsViewModel.swift; sourceTree = "<group>"; };
 		841D62BF2416ACD90000624E /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		841D62C2241D59270000624E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		841D62CA241DA9670000624E /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 				841D62BF2416ACD90000624E /* TabBarView.swift */,
 				8491B4012426C4CA002A3C1B /* CollectionViewModel.swift */,
 				8491B4052426D77D002A3C1B /* ProductsViewModel.swift */,
+				840C2718242C5CDF004E6E5B /* CollectsViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -137,9 +142,10 @@
 			isa = PBXGroup;
 			children = (
 				84531D54240AF4FC000581A7 /* Assets.xcassets */,
-				84AE98E5240C46CA00ED3ADE /* ProductCard.swift */,
 				84AE98EB240C601300ED3ADE /* FeaturedCard.swift */,
+				84AE98E5240C46CA00ED3ADE /* ProductCard.swift */,
 				8491B3FF2423ED2E002A3C1B /* CollectionCard.swift */,
+				840C2716242C5C8E004E6E5B /* Collects.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,7 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8491B4022426C4CA002A3C1B /* CollectionViewModel.swift in Sources */,
+				840C2717242C5C8E004E6E5B /* Collects.swift in Sources */,
 				84EC893A2415A58B001ECA3F /* ParallaxView.swift in Sources */,
+				840C2719242C5CDF004E6E5B /* CollectsViewModel.swift in Sources */,
 				84AE98E2240B28CE00ED3ADE /* ProductsView.swift in Sources */,
 				84AE98EC240C601300ED3ADE /* FeaturedCard.swift in Sources */,
 				84531D4F240AF4F8000581A7 /* AppDelegate.swift in Sources */,
