@@ -14,7 +14,7 @@ struct ProductCardView: View {
     var body: some View {
         HStack() {
             // learn how to manipulate the image without changing the padding
-            Image(productCard.image)
+            Image(uiImage: productCard.image)
                 .resizable()
                 .frame(width: 100, height: 100)
                 .overlay(

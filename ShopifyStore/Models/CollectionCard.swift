@@ -14,15 +14,17 @@ import SwiftyJSON
 struct CollectionCard: Identifiable, Hashable {
     
     var id: Int
+    var image: UIImage
     var backgroundImage: String
     var title: String
     var subtitle: String
     var description: String
     var isOnSale: Bool
     
-    init(withId id: Int, andBackgroundImage backgroundImage: String, andTitle title: String, andSubtitle subtitle: String, andDescription description: String, andIsOnSale isOnSale: Bool = false) {
+    init(withId id: Int, withImage image: UIImage, andBackgroundImage backgroundImage: String, andTitle title: String, andSubtitle subtitle: String, andDescription description: String, andIsOnSale isOnSale: Bool = false) {
         
         self.id = id
+        self.image = image
         self.backgroundImage = backgroundImage
         self.title = title
         self.subtitle = subtitle
@@ -33,6 +35,9 @@ struct CollectionCard: Identifiable, Hashable {
     init(withJSON json: JSON) {
         self.init(
             withId: json["id"].intValue,
+            withImage: UIImage(
+                fromUrl: json["image"]["src"].stringValue
+                ),
             andBackgroundImage: "Featured-Card-Bg",
             andTitle: json["title"].stringValue,
             andSubtitle: json["sort_order"].stringValue,
@@ -41,17 +46,17 @@ struct CollectionCard: Identifiable, Hashable {
     }
 }
 
-extension CollectionCard {
-    class CollectionImage {
-        
-        var customCollectionImage: UIImage
-        
-        init(customCollectionImage: UIImage) {
-            self.customCollectionImage = customCollectionImage
-        }
-        
-        convenience init(fromJSON json: JSON) {
-            self.init(customCollectionImage: UIImage(imageLiteralResourceName: json["image"]["src"].stringValue))
-        }
-    }
-}
+//extension CollectionCard {
+//    class CollectionImage {
+//
+//        var customCollectionImage: UIImage
+//
+//        init(customCollectionImage: UIImage) {
+//            self.customCollectionImage = customCollectionImage
+//        }
+//
+//        convenience init(fromJSON json: JSON) {
+//            self.init(customCollectionImage: UIImage(imageLiteralResourceName: json["image"]["src"].stringValue))
+//        }
+//    }
+//}

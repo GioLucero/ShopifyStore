@@ -27,6 +27,7 @@ class ProductsViewModel: ObservableObject {
         
         NetworkManager.shared.getCardData(withURL: NetworkManager.productURL) { productCardsJSON in
                 
+            print("making request")
             let productCards = productCardsJSON["products"].arrayValue.map {
                 // $0 - accesses the key elemenent
                 ProductCard(withJSON: $0)

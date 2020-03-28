@@ -6,7 +6,7 @@
 //  Copyright © 2020 Gio Lucero. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import SwiftyJSON
 
 struct Collects {

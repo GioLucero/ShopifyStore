@@ -42,7 +42,7 @@ struct ParallaxView: View {
             VStack(alignment: .leading) {
                 Spacer()
                 HStack {
-                    Image(collectionCard.image)
+                    Image(uiImage: collectionCard.image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 60, height: 60)
@@ -67,21 +67,10 @@ struct ParallaxView: View {
     }
 }
 
-//struct ParallaxView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ParallaxView(productCards:
-//            
-//            [
-//                ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//                ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//                ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//                ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//                ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//                ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//                ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false)
-//                
-//        ], collectionCard: CollectionCard(withId: 1, withImage: "shopify-robot-testdata", andBackgroundImage: "", andTitle: "Awesome Collection", andSubtitle: "", andDescription: "", andIsOnSale: false))
-//        
-//        
-//    }
-//}
+struct ParallaxView_Previews: PreviewProvider {
+    static var previews: some View {
+        ParallaxView(collectionCard: CollectionCard(withId: 1, withImage: UIImage(), andBackgroundImage: "", andTitle: "Awesome Collection", andSubtitle: "", andDescription: "", andIsOnSale: false))
+        
+        
+    }
+}

@@ -14,7 +14,7 @@ struct CollectionCardView: View {
     
     var body: some View {
         VStack {
-            Image(productCard.image)
+            Image(uiImage: productCard.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .background(Image("Featured-Card-Bg"))
@@ -53,6 +53,6 @@ struct CollectionCardView: View {
 struct ProductCardView_Previews: PreviewProvider {
     static var previews: some View {
         
-        CollectionCardView(productCard: CollectionCard(withId: 10, withImage: "shopify-robot-testdata", andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "The top of the line of aerodynamic products all in the same collection.", andIsOnSale: true))
+        CollectionCardView(productCard: CollectionCard(withId: 10, withImage: UIImage(), andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "The top of the line of aerodynamic products all in the same collection.", andIsOnSale: true))
     }
 }

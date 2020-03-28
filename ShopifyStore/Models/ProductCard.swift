@@ -16,10 +16,10 @@ struct ProductCard: Hashable, Identifiable {
     var vendorName: String
     var price: Double
     var quantity: Int
-    var image: String
+    var image: UIImage
     var isFavourite: Bool
     
-    init(withId id: Int, withtitle title: String, andVendorName vendor: String, andPrice price: Double, andQuantity quantity: Int, andImage image: String, andIsFavourite isFavourite: Bool = false) {
+    init(withId id: Int, withtitle title: String, andVendorName vendor: String, andPrice price: Double, andQuantity quantity: Int, andImage image: UIImage, andIsFavourite isFavourite: Bool = false) {
         
         self.id = id
         self.title = title
@@ -38,7 +38,7 @@ struct ProductCard: Hashable, Identifiable {
             andVendorName: json["vendor"].stringValue,
             andPrice: json["price"].doubleValue,
             andQuantity: json["inventory_quantity"].intValue,
-            andImage: json["image"]["src"].stringValue
+            andImage: UIImage(fromUrl: json["image"]["src"].stringValue)
         )
     }
 }
