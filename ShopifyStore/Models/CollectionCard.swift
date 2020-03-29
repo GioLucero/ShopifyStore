@@ -35,9 +35,7 @@ struct CollectionCard: Identifiable, Hashable {
     init(withJSON json: JSON) {
         self.init(
             withId: json["id"].intValue,
-            withImage: UIImage(
-                fromUrl: json["image"]["src"].stringValue
-                ),
+            withImage: UIImage(fromUrl: json["image"]["src"].stringValue),
             andBackgroundImage: "Featured-Card-Bg",
             andTitle: json["title"].stringValue,
             andSubtitle: json["sort_order"].stringValue,
@@ -45,18 +43,3 @@ struct CollectionCard: Identifiable, Hashable {
         )
     }
 }
-
-//extension CollectionCard {
-//    class CollectionImage {
-//
-//        var customCollectionImage: UIImage
-//
-//        init(customCollectionImage: UIImage) {
-//            self.customCollectionImage = customCollectionImage
-//        }
-//
-//        convenience init(fromJSON json: JSON) {
-//            self.init(customCollectionImage: UIImage(imageLiteralResourceName: json["image"]["src"].stringValue))
-//        }
-//    }
-//}

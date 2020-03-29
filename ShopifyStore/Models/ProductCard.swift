@@ -28,7 +28,6 @@ struct ProductCard: Hashable, Identifiable {
         self.quantity = quantity
         self.image = image
         self.isFavourite = isFavourite
-        
     }
     
     init(withJSON json: JSON) {
@@ -36,34 +35,9 @@ struct ProductCard: Hashable, Identifiable {
             withId: json["id"].intValue,
             withtitle: json["title"].stringValue,
             andVendorName: json["vendor"].stringValue,
-            andPrice: json["price"].doubleValue,
-            andQuantity: json["inventory_quantity"].intValue,
+            andPrice: json["variants"][0]["price"].doubleValue,
+            andQuantity: json["variants"][0]["inventory_quantity"].intValue,
             andImage: UIImage(fromUrl: json["image"]["src"].stringValue)
         )
-    }
-}
-
-extension ProductCard {
-    
-    class Variant {
-        var price: Double
-        var quantity: Int
-        var productImage: UIImage
-        
-        
-        init(withPrice price: Double, andQuantity quantity: Int, andProductImage productImage: UIImage) {
-            self.price = price
-            self.quantity = quantity
-            self.productImage = productImage
-        }
-        
-        convenience init(fromJSON json: JSON) {
-            self.init(
-                withPrice: json["price"].doubleValue,
-                andQuantity: json["inventory_quantity"].intValue,
-                andProductImage: UIImage(
-                    imageLiteralResourceName: json["image"]["src"].stringValue)
-            )
-        }
     }
 }

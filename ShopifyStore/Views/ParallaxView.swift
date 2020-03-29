@@ -42,24 +42,29 @@ struct ParallaxView: View {
             VStack(alignment: .leading) {
                 Spacer()
                 HStack {
-                    Image(uiImage: collectionCard.image)
+                    // Product Images
+                    Image("shopify-robot-testdata")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 60, height: 60)
                         .clipped()
                         .cornerRadius(10)
                     VStack(alignment: .leading) {
+                        // Subtitle
                         Text("Featured")
                             .font(.custom("AvenirNext-Medium", size: 15))
                             .foregroundColor(.gray)
+                        // Custom Collection Title
                         Text(collectionCard.title)
                             .font(.custom("AvenirNext-Demibold", size: 15))
                     }
                     Spacer()
                 }
+                // Border for product images 
                 .background(LinearGradient(gradient: Gradient(colors: [Color(.sRGB, red: 183/255, green: 283/255, blue: 169/255, opacity: 0.85),.white]), startPoint: .trailing, endPoint: .leading))
                 .offset(x: 10, y: -8)
-                .padding(.horizontal, 10)
+                .padding(.horizontal, -10)
+                // Inserting ProductsView
                 ProductsView()
             }
         }
