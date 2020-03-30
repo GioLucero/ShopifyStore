@@ -10,7 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var collectionCardViewModel: CollectionViewModel
-    @State var collectionCards: [CollectionCard]
+    @EnvironmentObject var productCardViewModel: ProductsViewModel
+    
+    var networkManager = NetworkManager()
     
     var body: some View {
         
@@ -18,7 +20,7 @@ struct ContentView: View {
             ScrollView {
                 SearchBarView()
                 // insert featured banner here
-                ForEach(collectionCards, id: \.self) { productCard in
+                ForEach(collectionCardViewModel.collectionCards, id: \.self) { productCard in
                     VStack {
                         NavigationLink(destination: ParallaxView(collectionCard: collections)) {
                             CollectionCardView(customCollectionCard: productCard)
@@ -39,10 +41,8 @@ struct ContentView: View {
 //        ContentView(collectionCards:
 //
 //            [
-//                CollectionCard(withId: 20, withImage: "shopify-robot-testdata", andBackgroundImage: "", andTitle: "Awesome Collection", andSubtitle: "Best-selling", andDescription: "", andIsOnSale: false),
-//
-//                CollectionCard(withId: 15, withImage: "shopify-robot-testdata", andBackgroundImage: "shopify-space", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false),
-//        ], searchBar: SearchBarView())
+//                CollectionCard(withId: 20, withImage: UIImage(), andBackgroundImage: "", andTitle: "", andSubtitle: "Best-selling", andDescription: "", andIsOnSale: false)
+//        ])
 //    }
 //}
 //

@@ -21,18 +21,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         
-        let productCards: [CollectionCard] =
-        
-        [
-            CollectionCard(withId: 30, withImage: UIImage(), andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false),
-            
-            CollectionCard(withId: 40, withImage: UIImage(), andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false)
-        ]
+//        let productCards: [CollectionCard] =
+//
+//        [
+//            CollectionCard(withId: 30, withImage: UIImage(), andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false),
+//
+//            CollectionCard(withId: 40, withImage: UIImage(), andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false)
+//        ]
         
         
         let productCardsViewModel: ProductsViewModel = ProductsViewModel.shared
+        
+        let collectionViewModel: CollectionViewModel = CollectionViewModel.shared
 
-        let contentView = ContentView(collectionCardViewModel: EnvironmentObject<CollectionViewModel>(), collectionCards: productCards).environmentObject(productCardsViewModel)
+        let contentView = ContentView().environmentObject(collectionViewModel).environmentObject(productCardsViewModel)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
