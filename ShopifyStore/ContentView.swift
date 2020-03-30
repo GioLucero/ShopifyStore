@@ -9,10 +9,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var collectionCardViewModel: CollectionViewModel
     @State var collectionCards: [CollectionCard]
-    @State var searchBar: SearchBarView
-    
-    var networkManager = NetworkManager()
     
     var body: some View {
         
@@ -23,7 +21,7 @@ struct ContentView: View {
                 ForEach(collectionCards, id: \.self) { productCard in
                     VStack {
                         NavigationLink(destination: ParallaxView(collectionCard: collections)) {
-                            CollectionCardView(productCard: productCard)
+                            CollectionCardView(customCollectionCard: productCard)
                         }
                     .buttonStyle(PlainButtonStyle())
                     }
@@ -62,4 +60,6 @@ struct ContentView: View {
 //
 //]
 //
+
+// Passing information to parallaxView banner 
 var collections = CollectionCard(withId: 1, withImage: UIImage(), andBackgroundImage: "", andTitle: "Awesome Collection", andSubtitle: "", andDescription: "", andIsOnSale: false)

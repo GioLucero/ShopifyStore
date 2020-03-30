@@ -34,7 +34,7 @@ struct ProductCardView: View {
                     .font(.system(size: 15, weight: .regular, design: .default))
                     .foregroundColor(.secondary)
                 
-                Text("CDN $" + String(format: "%.2f", productCard.price))
+                Text("CDN " + String(format: "%.2f", productCard.price))
                     .font(.system(size: 20, weight: .semibold, design: .default))
                     .foregroundColor((Color(.sRGB, red: 174/255, green: 22/255, blue: 0/255, opacity: 0.75)))
                 

@@ -9,12 +9,11 @@
 import SwiftUI
 
 struct CollectionCardView: View {
-    
-    @State var productCard: CollectionCard
+    @State var customCollectionCard: CollectionCard
     
     var body: some View {
         VStack {
-            Image(uiImage: productCard.image)
+            Image(uiImage: customCollectionCard.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .background(Image("Featured-Card-Bg"))
@@ -23,10 +22,10 @@ struct CollectionCardView: View {
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text(productCard.subtitle)
+                    Text(customCollectionCard.subtitle)
                         .font(.headline)
                         .foregroundColor(.secondary)
-                    Text(productCard.title)
+                    Text(customCollectionCard.title)
                         .font(.title)
                         .fontWeight(.black)
                         .foregroundColor(.primary)
@@ -50,9 +49,9 @@ struct CollectionCardView: View {
 
 
 
-struct ProductCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        CollectionCardView(productCard: CollectionCard(withId: 10, withImage: UIImage(), andBackgroundImage: "", andTitle: "", andSubtitle: "", andDescription: "The top of the line of aerodynamic products all in the same collection.", andIsOnSale: true))
-    }
-}
+//struct CollectionCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        
+//        CollectionCardView(customCollectionCard: CollectionCard(withId: 10, withImage: UIImage(), andBackgroundImage: "", andTitle: "", andSubtitle: "", andDescription: "The top of the line of aerodynamic products all in the same collection.", andIsOnSale: true))
+//    }
+//}

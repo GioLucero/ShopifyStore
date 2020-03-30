@@ -42,13 +42,14 @@ struct ParallaxView: View {
             VStack(alignment: .leading) {
                 Spacer()
                 HStack {
-                    // Product Images
+                    // Banner Images
                     Image("shopify-robot-testdata")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 60, height: 60)
                         .clipped()
                         .cornerRadius(10)
+                        .padding(.horizontal, 15)
                     VStack(alignment: .leading) {
                         // Subtitle
                         Text("Featured")
@@ -57,6 +58,7 @@ struct ParallaxView: View {
                         // Custom Collection Title
                         Text(collectionCard.title)
                             .font(.custom("AvenirNext-Demibold", size: 15))
+                            .foregroundColor(.black)
                     }
                     Spacer()
                 }

@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let productCardsViewModel: ProductsViewModel = ProductsViewModel.shared
 
-        let contentView = ContentView(collectionCards: productCards, searchBar: SearchBarView()).environmentObject(productCardsViewModel)
+        let contentView = ContentView(collectionCardViewModel: EnvironmentObject<CollectionViewModel>(), collectionCards: productCards).environmentObject(productCardsViewModel)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
