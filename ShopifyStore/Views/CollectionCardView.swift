@@ -13,18 +13,21 @@ struct CollectionCardView: View {
     
     var body: some View {
         VStack {
+            // Collection Card Image
             Image(uiImage: customCollectionCard.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .background(Image("Featured-Card-Bg"))
+                .background(Image("space-shopify"))
                 .clipped()
                 .aspectRatio(contentMode: .fit)
             
             HStack {
                 VStack(alignment: .leading) {
+                    // Subtitle for card
                     Text(customCollectionCard.subtitle)
                         .font(.headline)
                         .foregroundColor(.secondary)
+                    // Title for Card
                     Text(customCollectionCard.title)
                         .font(.title)
                         .fontWeight(.black)
