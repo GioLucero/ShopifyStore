@@ -29,12 +29,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            CollectionCard(withId: 40, withImage: UIImage(), andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false)
 //        ]
         
-        
+        // Print collects API in console
+        let collectsViewModel = CollectsViewModel.shared
+        // Passing in the productsCard API to the contentView
         let productCardsViewModel: ProductsViewModel = ProductsViewModel.shared
-        
+        // Passing in customCollects API to the contentView
         let collectionViewModel: CollectionViewModel = CollectionViewModel.shared
 
-        let contentView = ContentView().environmentObject(collectionViewModel).environmentObject(productCardsViewModel)
+        let contentView = ContentView().environmentObject(collectionViewModel).environmentObject(productCardsViewModel).environmentObject(collectsViewModel)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

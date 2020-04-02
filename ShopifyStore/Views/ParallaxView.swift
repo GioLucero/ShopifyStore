@@ -9,10 +9,8 @@
 import SwiftUI
 
 struct ParallaxView: View {
- 
-    
-    @State var collectionCard: CollectionCard
-    
+    @EnvironmentObject var productsViewModel: ProductsViewModel
+    var customCollectionID: Int
     
     var body: some View {
         ScrollView {
@@ -56,7 +54,7 @@ struct ParallaxView: View {
                             .font(.custom("AvenirNext-Medium", size: 15))
                             .foregroundColor(.gray)
                         // Custom Collection Title
-                        Text(collectionCard.title)
+                        Text(productsViewModel.productCards[0].title)
                             .font(.custom("AvenirNext-Demibold", size: 15))
                             .foregroundColor(.black)
                     }
@@ -67,17 +65,16 @@ struct ParallaxView: View {
                 .offset(x: 10, y: -8)
                 .padding(.horizontal, -10)
                 // Inserting ProductsView
-                ProductsView()
+                ProductsView(customCollectionID: self.customCollectionID)
             }
         }
         .edgesIgnoringSafeArea(.top)
     }
 }
 
-struct ParallaxView_Previews: PreviewProvider {
-    static var previews: some View {
-        ParallaxView(collectionCard: CollectionCard(withId: 1, withImage: UIImage(), andBackgroundImage: "", andTitle: "Awesome Collection", andSubtitle: "", andDescription: "", andIsOnSale: false))
-        
-        
-    }
-}
+//struct ParallaxView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ParallaxView(productCard: ProductCard(withId: 1, withtitle: "Featured Product", andDescription: "", andVendorName: "", andPrice: 12, andQuantity: 1, andImage: UIImage()), customCollectionID: 1)
+//
+//    }
+//}

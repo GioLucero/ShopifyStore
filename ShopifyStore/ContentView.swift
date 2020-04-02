@@ -20,10 +20,10 @@ struct ContentView: View {
             ScrollView {
                 SearchBarView()
                 // insert featured banner here
-                ForEach(collectionCardViewModel.collectionCards, id: \.self) { productCard in
+                ForEach(collectionCardViewModel.collectionCards, id: \.self) { collectionCard in
                     VStack {
-                        NavigationLink(destination: ParallaxView(collectionCard: collections)) {
-                            CollectionCardView(customCollectionCard: productCard)
+                        NavigationLink(destination: ParallaxView(customCollectionID: collectionCard.id)) {
+                            CollectionCardView(customCollectionCard: collectionCard)
                         }
                     .buttonStyle(PlainButtonStyle())
                     }
@@ -35,31 +35,5 @@ struct ContentView: View {
 }
 
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//        ContentView(collectionCards:
-//
-//            [
-//                CollectionCard(withId: 20, withImage: UIImage(), andBackgroundImage: "", andTitle: "", andSubtitle: "Best-selling", andDescription: "", andIsOnSale: false)
-//        ])
-//    }
-//}
-//
-//
-//var products =
-//
-//    [
-//        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false),
-//        ProductCard(withId: 1, withtitle: "Clock", andVendorName: "Jenkins", andPrice: 29.99, andQuantity: 40, andImage: "shopify-robot-testdata", andIsFavourite: false)
-//
-//]
-//
-
 // Passing information to parallaxView banner 
-var collections = CollectionCard(withId: 1, withImage: UIImage(), andBackgroundImage: "", andTitle: "Awesome Collection", andSubtitle: "", andDescription: "", andIsOnSale: false)
+//var collections = ProductCard(withId: 12, withtitle: "Featured Product", andDescription: "", andVendorName: "", andPrice: 1, andQuantity: 1, andImage: UIImage())

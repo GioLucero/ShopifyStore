@@ -49,6 +49,13 @@ class NetworkManager {
             }
         }
     }
+    
+    // call the custom collection api
+    // make a data of an array of collects
+    // pass through a collectionCards id 
+    public func getCollection(completion: @escaping (JSON) -> Void) {
+        
+    }
 }
 
 
