@@ -13,23 +13,35 @@ struct ContentView: View {
     
     @ObservedObject var collectionCardViewModel = CollectionViewModel.shared
     
+    @State var isLoading = true
+    
     var body: some View {
-        NavigationView {
-            ScrollView {
-                // insert featured banner here
-                ForEach(collectionCardViewModel.collectionCards, id: \.self) { collectionCard in
-                    VStack {
-                        NavigationLink(destination: ParallaxView(customCollectionID: collectionCard.id)) {
-                            CollectionCardView(customCollectionCard: collectionCard)
+        ZStack {
+            if isLoading {
+                ActivityIndicator(isAnimating: $isLoading, style: .large)
+            } else {
+                NavigationView {
+                    ScrollView {
+                        // insert featured banner here
+                        ForEach(collectionCardViewModel.collectionCards, id: \.self) { collectionCard in
+                            VStack {
+                                NavigationLink(destination: ParallaxView(customCollectionID: collectionCard.id)) {
+                                    CollectionCardView(customCollectionCard: collectionCard)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
                         }
-                        .buttonStyle(PlainButtonStyle())
                     }
+                    .navigationBarTitle("Collections")
                 }
             }
-            .navigationBarTitle("Collections")
-        }.onAppear {
-            self.collectionCardViewModel.getCustomCollectionData { collectionCards in
-                self.collectionCardViewModel.collectionCards = collectionCards
+        }
+        .onAppear {
+            if self.isLoading {
+                self.collectionCardViewModel.getCustomCollectionData { collectionCards in
+                    self.collectionCardViewModel.collectionCards = collectionCards
+                    self.isLoading = false
+                }
             }
         }
     }
