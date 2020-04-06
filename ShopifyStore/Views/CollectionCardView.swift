@@ -46,15 +46,14 @@ struct CollectionCardView: View {
         )
             .padding(.top, 30)
             .padding(.horizontal, 30)
-        
     }
 }
 
 
 
-//struct CollectionCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        
-//        CollectionCardView(customCollectionCard: CollectionCard(withId: 10, withImage: UIImage(), andBackgroundImage: "", andTitle: "", andSubtitle: "", andDescription: "The top of the line of aerodynamic products all in the same collection.", andIsOnSale: true))
-//    }
-//}
+struct CollectionCardView_Previews: PreviewProvider {
+    static var previews: some View {
+
+        CollectionCardView(customCollectionCard: CollectionCard(withId: 10, withImage: UIImage(), andBackgroundImage: "", andTitle: "", andSubtitle: "", andDescription: "The top of the line of aerodynamic products all in the same collection.", andIsOnSale: true))
+    }
+}

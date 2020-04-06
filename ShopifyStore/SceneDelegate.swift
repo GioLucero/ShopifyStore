@@ -21,14 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         
-//        let productCards: [CollectionCard] =
-//
-//        [
-//            CollectionCard(withId: 30, withImage: UIImage(), andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false),
-//
-//            CollectionCard(withId: 40, withImage: UIImage(), andBackgroundImage: "", andTitle: "Title", andSubtitle: "Subtitle", andDescription: "", andIsOnSale: false)
-//        ]
-        
         // Print collects API in console
         let collectsViewModel = CollectsViewModel.shared
         // Passing in the productsCard API to the contentView
@@ -36,12 +28,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Passing in customCollects API to the contentView
         let collectionViewModel: CollectionViewModel = CollectionViewModel.shared
 
-        let contentView = ContentView().environmentObject(collectionViewModel).environmentObject(productCardsViewModel).environmentObject(collectsViewModel)
+//        let contentView = ContentView().environmentObject(collectionViewModel).environmentObject(productCardsViewModel).environmentObject(collectsViewModel)
+        
+        let tabBar = TabBar().environmentObject(collectionViewModel).environmentObject(productCardsViewModel).environmentObject(collectsViewModel)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(rootView: tabBar)
             self.window = window
             window.makeKeyAndVisible()
         }
