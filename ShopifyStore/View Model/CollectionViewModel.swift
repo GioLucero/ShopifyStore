@@ -8,17 +8,20 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 // handles all the data for the collection views
 class CollectionViewModel: ObservableObject {
+    
     static let shared = CollectionViewModel()
-    
+
     // any changes in this file will update other views - SOURCE OF TRUTH
-    @Published var collectionCards: [CollectionCard] = [CollectionCard]()
     
-    init() {
-        self.getCustomCollectionData { result in
-            self.collectionCards = result
+    let didChange = PassthroughSubject<CollectionViewModel, Never>()
+    
+    @Published var collectionCards: [CollectionCard] = [CollectionCard]() {
+        didSet {
+            didChange.send(self)
         }
     }
     

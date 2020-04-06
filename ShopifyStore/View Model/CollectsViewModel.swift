@@ -8,27 +8,34 @@
 
 import Foundation
 import SwiftUI
+import Combine
+import Alamofire
 
 class CollectsViewModel: ObservableObject {
     static let shared = CollectsViewModel()
     
-    @Published var collectsData: [Collects] = [Collects]()
+    let didChange = PassthroughSubject<CollectsViewModel, Never>()
     
-    init() {
-        self.getCollectionData { result in
-            self.collectsData = result
+    @Published var collectsData: [Collects] = [Collects]() {
+        didSet {
+            didChange.send(self)
         }
     }
     
-    public func getCollectionData(completion: @escaping ([Collects]) -> Void) {
+    
+    public func getCollectData(withCollectionId collectionId: Int, completion: @escaping ([Int]) -> Void) {
         
-        NetworkManager.shared.getCardData(withURL: NetworkManager.collectionURL) { collectsDataJSON in
+        let parameter: Parameters = [
+            "collection_id": collectionId
+        ]
+        
+        NetworkManager.shared.getCardData(withURL: NetworkManager.collectionURL, andParameters: parameter) { collectsDataJSON in
             
-            let collectsData = collectsDataJSON["collects"].arrayValue.map {
+            let productIds: [Int] = collectsDataJSON["collects"].arrayValue.map {
                 // first key in the array of JSON
-                Collects(withJSON: $0)
+                $0["product_id"].intValue
             }
-            completion(collectsData)
+            completion(productIds)
         }
     }
 }

@@ -10,10 +10,8 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    @EnvironmentObject var collectionCardViewModel: CollectionViewModel
-    @EnvironmentObject var productCardViewModel: ProductsViewModel
     
-    var networkManager = NetworkManager()
+    @ObservedObject var collectionCardViewModel = CollectionViewModel.shared
     
     var body: some View {
         NavigationView {
@@ -29,6 +27,10 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle("Collections")
+        }.onAppear {
+            self.collectionCardViewModel.getCustomCollectionData { collectionCards in
+                self.collectionCardViewModel.collectionCards = collectionCards
+            }
         }
     }
 }

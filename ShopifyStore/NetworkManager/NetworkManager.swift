@@ -25,15 +25,14 @@ class NetworkManager {
     public static let accessToken: String = "c32313df0d0ef512ca64d5b336a0d7c6"
     
     
-    public func getCardData(withURL url: String, completion: @escaping (JSON) -> Void) {
+    public func getCardData(withURL url: String, andParameters parametersTemp: Parameters = Parameters(), completion: @escaping (JSON) -> Void) {
         
         // Parameters being set to perform the GET request
-        let parameters: Parameters = [
-            "access_token": NetworkManager.accessToken,
-        ]
-        // Defaults to .get
         
+        var parameters = parametersTemp
         
+        parameters["access_token"] = NetworkManager.accessToken
+
         let request = AF.request(url, parameters: parameters)
         request.responseJSON { response in
             // DispatchQueue executes a line of code in the main thread (primary source of execution)
