@@ -10,11 +10,11 @@ This project uses the following third-party Swift packages and dependencies:
 
 # Getting Started
 
-<b>System Requirements</b><br/>
+<b>System Requirements</b>
 <br/>
 macoS Mojave or later is required to build this project.
 
-<b>Instructions</b><br/>
+<b>Instructions</b>
 <br/>
 To clone this project in Xcode, click “Clone or download” and select “Open in Xcode”.
 
@@ -43,7 +43,7 @@ https://shopicruit.myshopify.com/admin/collects.json
 ```
 
 # File Architecture - MVVM
-This project is built with SwiftUI, that is Apple’s new user interface toolkit using declarative syntax and the Combine Framework (API for processing values over time).<br/>
+This project is built with <b>SwiftUI</b>, Apple’s new user interface toolkit using <b>declarative syntax</b> and the <b>Combine Framework</b> (API for processing values over time).<br/>
 
 The design structure used in this app is Model, View, View Model (MVVM)
 * <b>NetworkManager:</b> handles all networking and API related code
@@ -51,7 +51,7 @@ The design structure used in this app is Model, View, View Model (MVVM)
 * <b>Models:</b>  includes models that parse API results
 * <b>ViewModels:</b> includes files that reference data objects from the models so that they may be managed and presented 
 * <b>Assets.xcassets:</b> include additional images used in the project
-* <b>TabBar:</b> Our root view, which include all views that make up the project
+* <b>TabBar:</b> Our root view, which include all views that can be selected through the tab bar
  
  # Code Structure
  # Network Manager
@@ -135,6 +135,70 @@ Here is an example:
         }
     }
 ```
+
+# Views
+This app has three main views, which the user can select through the tab bar. Our root view displays a list of collection cards that house the corresponding products of the same collection_id.
+<br/>
+…
+
+The second view that can be selected in the tab bar is the search tab. This view stores the list of collection names, and upon accessing the searched name, it will direct the user to the given collection view with the list of products.
+<br/>
+….
+
+Finally, we have a settings tab. This is an additional feature to the app, to further emulate the e-commerce experience! 
+<br/>
+...
+
+# Additional Views
+
+While the data is being loaded for each view, I have added an activity indicator, which displays a loading animation. Once the data has successfully loaded, the data will be displayed on the screen. 
+
+```swift
+/// displays loading animation while data is being loaded
+struct ActivityIndicator: UIViewRepresentable {
+
+    @Binding var isAnimating: Bool
+    let style: UIActivityIndicatorView.Style
+
+    func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
+        return UIActivityIndicatorView(style: style)
+    }
+
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
+        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
+    }
+}
+```
+
+… (view)
+
+This app also features the parallax effect within our products list page.
+
+```swift
+GeometryReader { geometry in
+                VStack {
+                    /// Stretches image based on the position of the scroll
+                    if geometry.frame(in: .global).minY <= 0 {
+                        Image("Featured-Card-Bg")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
+                            .clipped()
+                            .offset(y: -geometry.frame(in: .global).minY)
+                    } else {
+                        Image("Featured-Card-Bg")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
+                            .clipped()
+                            .offset(y: -geometry.frame(in: .global).minY)
+                    }
+                }
+            }
+```
+
+… (view)
+
 
 
  
