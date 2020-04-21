@@ -10,11 +10,11 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-    
+
     @ObservedObject var collectionCardViewModel = CollectionViewModel.shared
-    
+
     @State var isLoading = true
-    
+
     var body: some View {
         ZStack {
             if isLoading {
@@ -48,24 +48,8 @@ struct ContentView: View {
 }
 
 
-// Passing information to parallaxView banner 
+// Passing information to parallaxView banner
 //var collections = ProductCard(withId: 12, withtitle: "Featured Product", andDescription: "", andVendorName: "", andPrice: 1, andQuantity: 1, andImage: UIImage())
 
-//struct TabBar: View {
-//    var body: some View {
-//        TabView {
-//            ContentView().tabItem {
-//                Image(systemName: "house")
-//                Text("Home")
-//            }
-//            SearchBarView().tabItem {
-//                Image(systemName: "magnifyingglass")
-//                Text("search")
-//            }
-//            SettingsTab().tabItem {
-//                Image(systemName: "gear")
-//                Text("Settings")
-//            }
-//        }
-//    }
-//}
+
+

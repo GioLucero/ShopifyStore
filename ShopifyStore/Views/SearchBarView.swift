@@ -12,6 +12,8 @@ struct SearchTab: View {
     let array = ["Peter", "Paul", "Mary", "Anna-Lena", "George", "John", "Greg", "Thomas", "Robert", "Bernie", "Mike", "Benno", "Hugo", "Miles", "Michael", "Mikel", "Tim", "Tom", "Lottie", "Lorrie", "Barbara"]
     @State private var searchText = ""
     @State private var showCancelButton: Bool = false
+    /// Passing collection names into the search bar array
+    @ObservedObject var collectionCardViewModel = CollectionViewModel.shared
 
     var body: some View {
 

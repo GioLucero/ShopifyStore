@@ -8,16 +8,18 @@
 
 import SwiftUI
 
+/// Displays the products that are stored in each collection
 struct ParallaxView: View {
-    
+    /// Models that hold the products and collects data
     @ObservedObject var productsViewModel = ProductsViewModel.shared
     @ObservedObject var collectsViewModel = CollectsViewModel.shared
-    
+    /// Display a loading screen as default
     @State var isLoading = true
     
     let customCollectionID: Int
     
     var body: some View {
+        /// Attempts loading screen
         ZStack {
             if isLoading {
                 ActivityIndicator(isAnimating: $isLoading, style: .large)
@@ -26,75 +28,78 @@ struct ParallaxView: View {
             }
         }
         .edgesIgnoringSafeArea(.top)
-        .onAppear {
-            self.collectsViewModel.getCollectData(withCollectionId: self.customCollectionID) { productIds in
-                self.productsViewModel.getProductData(withProductIds: productIds) { productCards in
-                    self.productsViewModel.productCards = productCards
-                    self.isLoading = false
+            /// Display data of this view when loading is successful
+            .onAppear {
+                self.collectsViewModel.getCollectData(withCollectionId: self.customCollectionID) { productIds in
+                    self.productsViewModel.getProductData(withProductIds: productIds) { productCards in
+                        self.productsViewModel.productCards = productCards
+                        self.isLoading = false
+                    }
                 }
-            }
-
+                
         }
     }
     
+    /// Display the view of the parallax image and list of products
     func getScrollView() -> some View {
         ScrollView {
-                // Parallax Effect on featured card
-                GeometryReader { geometry in
-                    VStack {
-                        if geometry.frame(in: .global).minY <= 0 {
-                            Image("Featured-Card-Bg")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
-                                .clipped()
-                                .offset(y: -geometry.frame(in: .global).minY)
-                        } else {
-                            Image("Featured-Card-Bg")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
-                                .clipped()
-                                .offset(y: -geometry.frame(in: .global).minY)
-                        }
-                    }
-                }
-                .frame(height: 400)
-                
-                // Collection banner w/ name and subtitle
-                VStack(alignment: .leading) {
-                    Spacer()
-                    HStack {
-                        // Banner Images
-                        Image("shopify-robot-testdata")
+            /// Parallax Effect on featured card
+            GeometryReader { geometry in
+                VStack {
+                    /// Stretches image based on the position of the scroll
+                    if geometry.frame(in: .global).minY <= 0 {
+                        Image("Featured-Card-Bg")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 60, height: 60)
+                            .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
                             .clipped()
-                            .cornerRadius(10)
-                            .padding(.horizontal, 15)
-                        VStack(alignment: .leading) {
-                            // Subtitle
-                            Text("Featured")
-                                .font(.custom("AvenirNext-Medium", size: 15))
-                                .foregroundColor(.gray)
-                            // Custom Collection Title
-                            Text("Collection")
-                                .font(.custom("AvenirNext-Demibold", size: 15))
-                                .foregroundColor(.black)
-                        }
-                        Spacer()
+                            .offset(y: -geometry.frame(in: .global).minY)
+                    } else {
+                        Image("Featured-Card-Bg")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
+                            .clipped()
+                            .offset(y: -geometry.frame(in: .global).minY)
                     }
-                    // Border for product images
+                }
+            }
+            .frame(height: 400)
+            
+            /// Displays banner that stores description of the collection
+            VStack(alignment: .leading) {
+                Spacer()
+                HStack {
+                    /// Banner Images
+                    Image("shopify-robot-testdata")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 60, height: 60)
+                        .clipped()
+                        .cornerRadius(10)
+                        .padding(.horizontal, 15)
+                    VStack(alignment: .leading) {
+                        /// Subtitle
+                        Text("Featured")
+                            .font(.custom("AvenirNext-Medium", size: 15))
+                            .foregroundColor(.gray)
+                        /// Custom Collection Title
+                        Text("Collection")
+                            .font(.custom("AvenirNext-Demibold", size: 15))
+                            .foregroundColor(.black)
+                    }
+                    Spacer()
+                }
+                    /// Border for product images
                     .background(LinearGradient(gradient: Gradient(colors: [Color(.sRGB, red: 183/255, green: 283/255, blue: 169/255, opacity: 0.85),.white]), startPoint: .trailing, endPoint: .leading))
                     .offset(x: 10, y: -8)
                     .padding(.horizontal, -10)
-                    // Inserting ProductsView
-                    ProductsView(productsCardViewModel: productsViewModel)
-                }
+                /// Display list of products
+                ProductsView(productsCardViewModel: productsViewModel)
+            }
         }
     }
-
+    
 }
 
 //struct ParallaxView_Previews: PreviewProvider {

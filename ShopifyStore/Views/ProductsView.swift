@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-
+/// List of products to store inside for each collection
 struct ProductsView: View {
-  
+    /// Model that holds the products data
     @ObservedObject var productsCardViewModel: ProductsViewModel
  
     var body: some View {
@@ -21,6 +21,7 @@ struct ProductsView: View {
             
             VStack {
                 HStack {
+                    /// Name of the list
                     Text("Products")
                         .font(.system(size: 30, weight: .heavy, design: .default))
                         .lineLimit(nil)
@@ -29,12 +30,10 @@ struct ProductsView: View {
                     
                     Spacer()
                 }
-                
+                /// Creating a list of product cards
                 ForEach(productsCardViewModel.productCards, id: \.self) { productCard in
                     ProductCardView(productCard: productCard)
-                    
                 }
-                    
                 .padding(.top, -10)
             }
         }

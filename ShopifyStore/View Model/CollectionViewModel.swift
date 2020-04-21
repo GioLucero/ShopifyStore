@@ -10,12 +10,13 @@ import Foundation
 import SwiftUI
 import Combine
 
-// handles all the data for the collection views
+/// Handles all the data for the collection views
 class CollectionViewModel: ObservableObject {
     
+    /// Shared singleton of the global instance of CollectionViewModel
     static let shared = CollectionViewModel()
 
-    // any changes in this file will update other views - SOURCE OF TRUTH
+    /// Any changes in this file will update other views - SOURCE OF TRUTH
     
     let didChange = PassthroughSubject<CollectionViewModel, Never>()
     

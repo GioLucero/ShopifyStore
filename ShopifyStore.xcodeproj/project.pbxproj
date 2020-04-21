@@ -10,7 +10,7 @@
 		840C2717242C5C8E004E6E5B /* Collects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C2716242C5C8E004E6E5B /* Collects.swift */; };
 		840C2719242C5CDF004E6E5B /* CollectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C2718242C5CDF004E6E5B /* CollectsViewModel.swift */; };
 		840C271F242EC098004E6E5B /* UIImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840C271E242EC098004E6E5B /* UIImageDownloader.swift */; };
-		8413E8942437966000E0C5C7 /* SettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413E8932437966000E0C5C7 /* SettingsTab.swift */; };
+		8413E8942437966000E0C5C7 /* SettingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413E8932437966000E0C5C7 /* SettingTabView.swift */; };
 		841D62C02416ACD90000624E /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D62BF2416ACD90000624E /* TabBarView.swift */; };
 		841D62C3241D59270000624E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D62C2241D59270000624E /* NetworkManager.swift */; };
 		841D62C6241D59920000624E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 841D62C5241D59920000624E /* Alamofire */; };
@@ -29,7 +29,6 @@
 		84AE98E0240B28A400ED3ADE /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE98DF240B28A400ED3ADE /* ProductCardView.swift */; };
 		84AE98E2240B28CE00ED3ADE /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE98E1240B28CE00ED3ADE /* ProductsView.swift */; };
 		84AE98E6240C46CA00ED3ADE /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE98E5240C46CA00ED3ADE /* ProductCard.swift */; };
-		84AE98EE240C635400ED3ADE /* CollectionFeaturedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE98ED240C635400ED3ADE /* CollectionFeaturedCard.swift */; };
 		84EC893A2415A58B001ECA3F /* ParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC89392415A58B001ECA3F /* ParallaxView.swift */; };
 		84EC893C24169C36001ECA3F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC893B24169C35001ECA3F /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
@@ -38,7 +37,7 @@
 		840C2716242C5C8E004E6E5B /* Collects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collects.swift; sourceTree = "<group>"; };
 		840C2718242C5CDF004E6E5B /* CollectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectsViewModel.swift; sourceTree = "<group>"; };
 		840C271E242EC098004E6E5B /* UIImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageDownloader.swift; sourceTree = "<group>"; };
-		8413E8932437966000E0C5C7 /* SettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTab.swift; sourceTree = "<group>"; };
+		8413E8932437966000E0C5C7 /* SettingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTabView.swift; sourceTree = "<group>"; };
 		841D62BF2416ACD90000624E /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		841D62C2241D59270000624E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		84229ABD243AD95B00EFED7A /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
@@ -57,7 +56,6 @@
 		84AE98DF240B28A400ED3ADE /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		84AE98E1240B28CE00ED3ADE /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		84AE98E5240C46CA00ED3ADE /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
-		84AE98ED240C635400ED3ADE /* CollectionFeaturedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionFeaturedCard.swift; sourceTree = "<group>"; };
 		84EC89392415A58B001ECA3F /* ParallaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxView.swift; sourceTree = "<group>"; };
 		84EC893B24169C35001ECA3F /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,11 +155,10 @@
 		84531D64240AF90C000581A7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8413E8932437966000E0C5C7 /* SettingsTab.swift */,
+				8413E8932437966000E0C5C7 /* SettingTabView.swift */,
 				84EC893B24169C35001ECA3F /* SearchBarView.swift */,
 				841D62BF2416ACD90000624E /* TabBarView.swift */,
 				84531D65240AFF5E000581A7 /* CollectionCardView.swift */,
-				84AE98ED240C635400ED3ADE /* CollectionFeaturedCard.swift */,
 				84AE98DF240B28A400ED3ADE /* ProductCardView.swift */,
 				84AE98E1240B28CE00ED3ADE /* ProductsView.swift */,
 				84EC89392415A58B001ECA3F /* ParallaxView.swift */,
@@ -254,7 +251,7 @@
 				84EC893A2415A58B001ECA3F /* ParallaxView.swift in Sources */,
 				840C2719242C5CDF004E6E5B /* CollectsViewModel.swift in Sources */,
 				84AE98E2240B28CE00ED3ADE /* ProductsView.swift in Sources */,
-				8413E8942437966000E0C5C7 /* SettingsTab.swift in Sources */,
+				8413E8942437966000E0C5C7 /* SettingTabView.swift in Sources */,
 				84531D4F240AF4F8000581A7 /* AppDelegate.swift in Sources */,
 				8491B4062426D77D002A3C1B /* ProductsViewModel.swift in Sources */,
 				84531D51240AF4F8000581A7 /* SceneDelegate.swift in Sources */,
@@ -264,7 +261,6 @@
 				84AE98E0240B28A400ED3ADE /* ProductCardView.swift in Sources */,
 				84EC893C24169C36001ECA3F /* SearchBarView.swift in Sources */,
 				84531D53240AF4F8000581A7 /* ContentView.swift in Sources */,
-				84AE98EE240C635400ED3ADE /* CollectionFeaturedCard.swift in Sources */,
 				8491B4002423ED2E002A3C1B /* CollectionCard.swift in Sources */,
 				841D62C3241D59270000624E /* NetworkManager.swift in Sources */,
 				841D62C02416ACD90000624E /* TabBarView.swift in Sources */,

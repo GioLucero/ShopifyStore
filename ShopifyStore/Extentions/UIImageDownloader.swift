@@ -8,11 +8,15 @@
 
 import UIKit
 
+/// extention of the UIImage function from
 extension UIImage {
     
+    /// passing in API url
     convenience init(fromUrl url: String) {
+        /// Creates a url
         let imageURL = URL(string: url)
         
+        /// downloading the image from the given url
         if let imageData = try? Data(contentsOf: imageURL!) {
             print("DownloadedImage")
             self.init(data: imageData)!

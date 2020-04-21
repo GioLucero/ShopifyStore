@@ -8,12 +8,14 @@
 
 import SwiftUI
 
+/// Displays the Collection card
 struct CollectionCardView: View {
+    /// Creating the variable to store the data from CollectionCard model
     @State var customCollectionCard: CollectionCard
     
     var body: some View {
         VStack {
-            // Collection Card Image
+            /// Collection Card Image
             Image(uiImage: customCollectionCard.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -22,12 +24,13 @@ struct CollectionCardView: View {
                 .aspectRatio(contentMode: .fit)
             
             HStack {
+                /// The description layout 
                 VStack(alignment: .leading) {
-                    // Subtitle for card
+                    /// Subtitle for card
                     Text(customCollectionCard.subtitle)
                         .font(.headline)
                         .foregroundColor(.secondary)
-                    // Title for Card
+                    /// Title for Card
                     Text(customCollectionCard.title)
                         .font(.title)
                         .fontWeight(.black)
@@ -40,6 +43,7 @@ struct CollectionCardView: View {
             .padding()
         }
         .cornerRadius(15)
+        /// Outline for collection card
         .overlay(
             RoundedRectangle(cornerRadius: 15)
                 .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 1)
