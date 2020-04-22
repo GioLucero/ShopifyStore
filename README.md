@@ -1,5 +1,6 @@
 # ShopifyStore - iOS
 ## By: Gio Lucero
+<img src="/desktop/images/Simulator Screen Shot - iPhone 11 Pro Max - 2020-04-21 at 21.36.22.png" width="200"/>
 
 This project submission is for the Mobile Developer (iOS) intern challenge at Shopify in Ottawa and Toronto. This app replicates an e-commerce store by displaying data from three given API’s, using <b>Swift</b> and <b>SwiftUI</b>.
  
