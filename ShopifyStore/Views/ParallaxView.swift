@@ -94,7 +94,7 @@ struct ParallaxView: View {
                     .background(LinearGradient(gradient: Gradient(colors: [Color(.sRGB, red: 183/255, green: 283/255, blue: 169/255, opacity: 0.85),.white]), startPoint: .trailing, endPoint: .leading))
                     .offset(x: 10, y: -8)
                     .padding(.horizontal, -10)
-                /// Display list of products
+                /// Display a list of products of the collection
                 ProductsView(productsCardViewModel: productsViewModel)
             }
         }

@@ -24,12 +24,14 @@ class NetworkManager {
     /// Access Token for API URL's
     public static let accessToken: String = "c32313df0d0ef512ca64d5b336a0d7c6"
     
+    /// API Call - return the JSON data from API 
     public func getCardData(withURL url: String, andParameters parametersTemp: Parameters = Parameters(), completion: @escaping (JSON) -> Void) {
         
         /// Parameters being set to perform the GET request
         
         var parameters = parametersTemp
         
+        /// Using the access token to access the API
         parameters["access_token"] = NetworkManager.accessToken
         
         /// Making the GET request (default in Alamofire)

@@ -26,10 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        // Passing in the productsCard API to the contentView
 //        let productCardsViewModel: ProductsViewModel = ProductsViewModel.shared
         // Passing in customCollects API to the contentView
-     
-
-//        let contentView = ContentView().environmentObject(collectionViewModel).environmentObject(productCardsViewModel).environmentObject(collectsViewModel)
-        
+    
         let tabBar = TabBar()
 
         // Use a UIHostingController as window root view controller.

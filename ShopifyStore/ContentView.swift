@@ -10,21 +10,24 @@ import SwiftUI
 import Combine
 
 struct ContentView: View {
-
+    /// Model that stores the data from the customCollection API
     @ObservedObject var collectionCardViewModel = CollectionViewModel.shared
-
+    /// Displays a loading screen as the default
     @State var isLoading = true
 
     var body: some View {
         ZStack {
+            /// Attempts loading screen
             if isLoading {
                 ActivityIndicator(isAnimating: $isLoading, style: .large)
             } else {
                 NavigationView {
                     ScrollView {
                         // insert featured banner here
+                        /// Creating a list of collection cards
                         ForEach(collectionCardViewModel.collectionCards, id: \.self) { collectionCard in
                             VStack {
+                                /// Once the collection clicked, it will direct the user to the next page
                                 NavigationLink(destination: ParallaxView(customCollectionID: collectionCard.id)) {
                                     CollectionCardView(customCollectionCard: collectionCard)
                                 }
@@ -36,6 +39,7 @@ struct ContentView: View {
                 }
             }
         }
+        /// Display data when loading is successful
         .onAppear {
             if self.isLoading {
                 self.collectionCardViewModel.getCustomCollectionData { collectionCards in
