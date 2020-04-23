@@ -11,6 +11,9 @@ import SwiftUI
 /// Display a single product card
 struct ProductCardView: View {
     @State var productCard: ProductCard
+    @State var isShoppingCartView = false
+    @State var showAddedItemAlert = false
+    @EnvironmentObject var shoppingCart: ShoppingCart
     
     var body: some View {
         HStack() {
@@ -48,29 +51,26 @@ struct ProductCardView: View {
             }
             Spacer()
             
-            //            if productCard.isFavourite {
-            //                Image(systemName: productCard.isFavourite ? "heart.fill" : "heart")
-            //                    .font(.title)
-            //                    .padding()
-            //                    .foregroundColor(.blue)
-            //            } else {
-            //                Image(systemName: "heart")
-            //                    .font(.title)
-            //                    .padding()
-            //                    .foregroundColor(.blue)
-            //            }
-            
-            /// Get button
-            Text("GET")
-                .fontWeight(.bold)
-                .padding(.horizontal, 20)
-                .padding(.vertical, 5)
-                .foregroundColor(.blue)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 2))
-                .padding(.horizontal)
-        }.padding(10)
+            if !isShoppingCartView {
+                Button(action: {
+                    self.shoppingCart.items.append(self.productCard)
+                    self.showAddedItemAlert = true
+                }) {
+                    Text("ADD")
+                        .fontWeight(.bold)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 5)
+                        .foregroundColor(.blue)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.5), lineWidth: 2))
+                        .padding(.horizontal)
+        
+                }.padding(10)
+            }
+        }.alert(isPresented: $showAddedItemAlert, content: {
+            Alert(title: Text("Item added to cart"), message: Text("\(productCard.title) has been added to your cart!"), dismissButton: .default(Text("Ok")))
+        })
     }
 }
 
