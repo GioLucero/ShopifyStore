@@ -56,9 +56,9 @@ struct ProductCardView: View {
                     self.shoppingCart.items.append(self.productCard)
                     self.showAddedItemAlert = true
                 }) {
-                    Text("ADD")
+                    Text("GET")
                         .fontWeight(.bold)
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, 15)
                         .padding(.vertical, 5)
                         .foregroundColor(.blue)
                         .overlay(

@@ -11,6 +11,7 @@ import SwiftUI
 class ShoppingCart: ObservableObject {
     @Published var items = [ProductCard]()
     
+    /// function to return the total checkout price
     func getTotalPrice() -> Double {
         var totalPrice: Double = 0.0
         // iterate through items array

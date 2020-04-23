@@ -120,10 +120,10 @@
 		844ED7B224512D5900BEF31A /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
+				84531D65240AFF5E000581A7 /* CollectionCardView.swift */,
+				841D62BF2416ACD90000624E /* TabBarView.swift */,
 				8413E8932437966000E0C5C7 /* SettingTabView.swift */,
 				84EC893B24169C35001ECA3F /* SearchBarView.swift */,
-				841D62BF2416ACD90000624E /* TabBarView.swift */,
-				84531D65240AFF5E000581A7 /* CollectionCardView.swift */,
 				84229ABD243AD95B00EFED7A /* ActivityIndicatorView.swift */,
 			);
 			path = MainViews;
@@ -134,7 +134,6 @@
 			children = (
 				844ED7B424512D8E00BEF31A /* ShoppingCart.swift */,
 				844ED7B624512D9600BEF31A /* ShoppingCartView.swift */,
-				84A8C9702451517D00E274F3 /* CheckoutView.swift */,
 			);
 			path = AddToCart;
 			sourceTree = "<group>";
@@ -196,6 +195,7 @@
 		84531D64240AF90C000581A7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84A8C9722452072200E274F3 /* Checkout */,
 				844ED7B324512D7A00BEF31A /* AddToCart */,
 				844ED7B224512D5900BEF31A /* MainViews */,
 				844ED7B124512D4300BEF31A /* Products */,
@@ -209,6 +209,14 @@
 				849EB60D244FF4D600E0357C /* shopifystore-screenshot.png */,
 			);
 			path = Documentation;
+			sourceTree = "<group>";
+		};
+		84A8C9722452072200E274F3 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				84A8C9702451517D00E274F3 /* CheckoutView.swift */,
+			);
+			path = Checkout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
