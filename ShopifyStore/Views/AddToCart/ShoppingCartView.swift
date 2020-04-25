@@ -16,39 +16,53 @@ struct ShoppingCartView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    /// Creating a list of products added to the shopping cart
-                    ForEach(shoppingCart.items, id: \.self) { product in
-                        ProductCardView(productCard: product, isShoppingCartView: true)
-                    }
-                    /// Swipe to remove items from the shopping cart
-                    .onDelete(perform: deleteItems)
+            
+            if shoppingCart.items.isEmpty {
+
+                VStack(alignment: .center) {
+                    Text("Your Shopping Cart is Empty. Please Add items to your cart.")
                 }
-                .navigationBarTitle("Your Shopping Cart")
-                /// Edit button to remove items from list
-                .navigationBarItems(trailing: EditButton())
                 
-                ZStack {
-                    /// Move to the checkout view
-                    NavigationLink(destination: CheckoutView(), tag: 1, selection: $action ) { EmptyView() }
+                .navigationBarTitle("Your Shopping Cart")
+                
+            } else {
+                VStack {
+                    List {
+                        /// Creating a list of products added to the shopping cart
+                        ForEach(shoppingCart.items, id: \.self) { product in
+                            ProductCardView(productCard: product, isShoppingCartView: true)
+                        }
+                            /// Swipe to remove items from the shopping cart
+                            .onDelete(perform: deleteItems)
+                    }
+                        
+                        /// Edit button to remove items from list
+                        .navigationBarItems(trailing: EditButton())
+                        .navigationBarTitle("Your Shopping Cart")
                     
-                    /// Checkout total button - returns the total price
-                    Button(action: {
-                        self.action = 1
-                    }, label: {
-                        /// Call function to recieve total price
-                        Text("Checkout Total: $\(shoppingCart.getTotalPrice(), specifier: "%.2f")")
-                            .foregroundColor(.white)
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .frame(width: 300, height: 50)
-                            .background(Color.orange)
-                            .cornerRadius(18)
-                            .padding(.vertical, 15)
-                    })
+                    
+                    ZStack {
+                        /// Move to the checkout view
+                        NavigationLink(destination: CheckoutView(), tag: 1, selection: $action ) { EmptyView() }
+                        
+                        /// Checkout total button - returns the total price
+                        Button(action: {
+                            self.action = 1
+                        }, label: {
+                            /// Call function to recieve total price
+                            Text("Checkout Total: $\(shoppingCart.getTotalPrice(), specifier: "%.2f")")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .frame(width: 300, height: 50)
+                                .background(Color.orange)
+                                .cornerRadius(18)
+                                .padding(.vertical, 15)
+                        })
+                    }
                 }
             }
+            
         }.onAppear {
             self.action = 0
         }

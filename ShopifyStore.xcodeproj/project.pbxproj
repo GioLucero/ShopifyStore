@@ -34,6 +34,7 @@
 		84AE98E2240B28CE00ED3ADE /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE98E1240B28CE00ED3ADE /* ProductsView.swift */; };
 		84AE98E6240C46CA00ED3ADE /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE98E5240C46CA00ED3ADE /* ProductCard.swift */; };
 		84CD1EAB245340FC0078F891 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CD1EAA245340FC0078F891 /* ProfileView.swift */; };
+		84CD1EAD2454DCDD0078F891 /* FeaturedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CD1EAC2454DCDD0078F891 /* FeaturedCardView.swift */; };
 		84EC893A2415A58B001ECA3F /* ParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC89392415A58B001ECA3F /* ParallaxView.swift */; };
 		84EC893C24169C36001ECA3F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC893B24169C35001ECA3F /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		84AE98E1240B28CE00ED3ADE /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		84AE98E5240C46CA00ED3ADE /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		84CD1EAA245340FC0078F891 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		84CD1EAC2454DCDD0078F891 /* FeaturedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCardView.swift; sourceTree = "<group>"; };
 		84EC89392415A58B001ECA3F /* ParallaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxView.swift; sourceTree = "<group>"; };
 		84EC893B24169C35001ECA3F /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 				84AE98DF240B28A400ED3ADE /* ProductCardView.swift */,
 				84AE98E1240B28CE00ED3ADE /* ProductsView.swift */,
 				84EC89392415A58B001ECA3F /* ParallaxView.swift */,
+				84CD1EAC2454DCDD0078F891 /* FeaturedCardView.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				840C2719242C5CDF004E6E5B /* CollectsViewModel.swift in Sources */,
 				84AE98E2240B28CE00ED3ADE /* ProductsView.swift in Sources */,
 				8413E8942437966000E0C5C7 /* SettingTabView.swift in Sources */,
+				84CD1EAD2454DCDD0078F891 /* FeaturedCardView.swift in Sources */,
 				84531D4F240AF4F8000581A7 /* AppDelegate.swift in Sources */,
 				8491B4062426D77D002A3C1B /* ProductsViewModel.swift in Sources */,
 				84531D51240AF4F8000581A7 /* SceneDelegate.swift in Sources */,

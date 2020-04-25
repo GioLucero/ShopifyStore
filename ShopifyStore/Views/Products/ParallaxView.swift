@@ -71,8 +71,8 @@ struct ParallaxView: View {
                                 Text("Featured")
                                     .font(.custom("AvenirNext-Medium", size: 15))
                                     .foregroundColor(.gray)
-                                /// Custom Collection Title
-                                Text("Collection")
+                                /// Description
+                                Text("Description")
                                     .font(.custom("AvenirNext-Demibold", size: 15))
                                     .foregroundColor(.black)
                             }
