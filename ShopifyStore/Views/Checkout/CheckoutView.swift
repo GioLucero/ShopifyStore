@@ -30,8 +30,12 @@ struct CheckoutOrder: View {
     @State var email = ""
     @State var submit = false
     
+    @EnvironmentObject var shoppingCart: ShoppingCart
+    //    @Published var items = [ProductCard]()
+    //    @State var shippingPrice = 7.99
+    
     var body: some View {
-        NavigationView {
+        HStack(alignment: .top) {
             Form {
                 Section(header: Text("Shipping address")) {
                     Picker(selection: $selection, label: Text("Shopify Office")) {
@@ -43,18 +47,14 @@ struct CheckoutOrder: View {
                     VStack {
                         HStack {
                             VStack(alignment: .leading, spacing: 5) {
-                                Text("Items:")
+                                Text("Items(\(shoppingCart.items.count)):")
                                     .foregroundColor(.secondary)
-                                
                                 Text("Shipping and Handling:")
                                     .foregroundColor(.secondary)
-                                
                                 Text("Total before tax:")
                                     .foregroundColor(.secondary)
-                                
                                 Text("Estimated GST/HST:")
                                     .foregroundColor(.secondary)
-                                
                                 Text("Order Total:")
                                     .font(.system(size: 20, weight: .bold, design: .default))
                                     .padding(.top, 15)
@@ -63,29 +63,37 @@ struct CheckoutOrder: View {
                             VStack {
                                 HStack {
                                     VStack(alignment: .trailing, spacing: 5) {
-                                        Text("total1")
-                                            .foregroundColor(.primary)
-                                            .padding(.horizontal, 60)
-                                            .padding(.bottom, 20)
-                                        
-                                        Text("total2")
-                                            .foregroundColor(.primary)
-                                            .padding(.horizontal, 60)
-                                        
-                                        Text("total3")
-                                            .foregroundColor(.primary)
-                                            .padding(.horizontal, 60)
-                                        Text("total4")
-                                            .foregroundColor(.primary)
-                                            .padding(.horizontal, 60)
-                                        Text("total")
+                                        Text("$\(shoppingCart.getTotalPrice(), specifier: "%.2f")")
+                                            .foregroundColor(.secondary)
+                                            .padding(.horizontal, 50)
+                                            .padding(.bottom, 12)
+                                            .padding(.top, 8)
+                                        Text("$\(shoppingCart.getShippingPrice(), specifier: "%.2f")")
+                                            .foregroundColor(.secondary)
+                                            .padding(.horizontal, 50)
+                                        Text("$\(shoppingCart.getSubtotal(), specifier: "%.2f")")
+                                            .foregroundColor(.secondary)
+                                            .padding(.horizontal, 50)
+                                        Text("$\(shoppingCart.getGST(), specifier: "%.2f")")
+                                            .foregroundColor(.secondary)
+                                            .padding(.horizontal, 50)
+                                        Text("$\(shoppingCart.getOrderTotal(), specifier: "%.2f")")
                                             .font(.system(size: 20, weight: .bold, design: .default))
+                                            .foregroundColor((Color(.sRGB, red: 174/255, green: 22/255, blue: 0/255, opacity: 0.75)))
                                             .padding(.top, 15)
-                                            .padding(.horizontal, 60)
+                                            .padding(.horizontal, 40)
+                                            .padding(.bottom, 10)
                                     }
                                 }
                             }
                         }
+                    }
+                }
+                
+                Section(header: Text("Payment Information")) {
+                    Picker(selection: $selection, label: Text("Payment Method")) {
+                        Text("Credit Card").tag(1)
+                        Text("Pay Pal").tag(2)
                     }
                 }
                 Toggle(isOn: $receive) {
@@ -100,29 +108,12 @@ struct CheckoutOrder: View {
                     }
                 }
                 .alert(isPresented: $submit, content: {
-                    Alert(title: Text("Thanks, your order has been shipped!"), message: Text("Your reciept has been sent to: \(email)"))
+                    Alert(title: Text("Thanks, your order has been shipped"), message: Text("Enjoy!"))
                 })
-                
             }
-            .navigationBarTitle("Checkout Order")
+        .navigationBarTitle("Checkout Order")
         }
     }
 }
 
-
-//func getShippingPrice() -> Double {
-//
-//}
-//
-//func getSubtotal() -> Double {
-//
-//}
-//
-//func getGST() -> Double {
-//
-//}
-//
-//func getOrderTotal() -> Double {
-//
-//}
 

@@ -22,4 +22,49 @@ class ShoppingCart: ObservableObject {
         }
         return totalPrice
     }
+    
+    func getShippingPrice() -> Double {
+        var shippingPrice: Double = 0.0
+        let totalPrice = getTotalPrice()
+        
+        if (totalPrice > 0) {
+            shippingPrice = 7.99
+        } else {
+            return shippingPrice
+        }
+        return shippingPrice
+    }
+    
+    func getSubtotal() -> Double {
+        // subtotal = cost of products + shipping
+        let totalPrice = getTotalPrice()
+        let shippingPrice = getShippingPrice()
+        var subtotal: Double = 0.0
+        
+        if (totalPrice > 0) {
+            subtotal = totalPrice + shippingPrice
+        } else {
+            subtotal = 0.0
+        }
+        return subtotal
+    }
+
+    func getGST() -> Double {
+        // GST = subtotal * .13
+        var GST: Double = 0.0
+        let totalPrice = getTotalPrice()
+        
+        if (totalPrice > 0) {
+            GST = getSubtotal() * 0.13
+        } else {
+            return GST
+        }
+        return GST
+    }
+
+    func getOrderTotal() -> Double {
+        // total = subtotal + GST
+        let orderTotal: Double = getSubtotal() + getGST()
+        return orderTotal
+    }
 }

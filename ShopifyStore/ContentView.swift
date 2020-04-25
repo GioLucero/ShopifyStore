@@ -14,6 +14,7 @@ struct ContentView: View {
     @ObservedObject var collectionCardViewModel = CollectionViewModel.shared
     /// Displays a loading screen as the default
     @State var isLoading = true
+    
 
     var body: some View {
         ZStack {
@@ -36,6 +37,14 @@ struct ContentView: View {
                         }
                     }
                     .navigationBarTitle("Collections")
+                    .navigationBarItems(trailing:
+                        Button(action: {
+                            print("User icon pressed...")
+                        }) {
+                            NavigationLink(destination: ProfileView()) {
+                                Image(systemName: "person.crop.circle").imageScale(.large)
+                        }
+                    })
                 }
             }
         }
