@@ -29,7 +29,7 @@ struct ContentView: View {
                         ForEach(collectionCardViewModel.collectionCards, id: \.self) { collectionCard in
                             VStack {
                                 /// Once the collection clicked, it will direct the user to the next page
-                                NavigationLink(destination: ParallaxView(customCollectionID: collectionCard.id)) {
+                                NavigationLink(destination: ParallaxView(description: collectionCard.description, parallaxImageName: collectionCard.image, customCollectionID: collectionCard.id)) {
                                     CollectionCardView(customCollectionCard: collectionCard)
                                 }
                                 .buttonStyle(PlainButtonStyle())

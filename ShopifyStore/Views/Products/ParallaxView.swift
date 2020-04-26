@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import UIKit
+
 
 /// Displays the products that are stored in each collection
 struct ParallaxView: View {
@@ -16,6 +18,8 @@ struct ParallaxView: View {
     /// Display a loading screen as default
     @State var isLoading = true
     
+    let description: String
+    let parallaxImageName: UIImage
     let customCollectionID: Int
     
     var body: some View {
@@ -30,7 +34,7 @@ struct ParallaxView: View {
                         VStack {
                             /// Stretches image based on the position of the scroll
                             if geometry.frame(in: .global).minY <= 0 {
-                                Image("shopify-robot-testdata")
+                                Image(uiImage: self.parallaxImageName)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 300, height: 300)
@@ -40,7 +44,7 @@ struct ParallaxView: View {
                                     .clipped()
                                     .offset(y: -geometry.frame(in: .global).minY)
                             } else {
-                                Image("shopify-robot-testdata")
+                                Image(uiImage: self.parallaxImageName)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 300, height: 300)
@@ -59,7 +63,7 @@ struct ParallaxView: View {
                         Spacer()
                         HStack {
                             /// Banner Images
-                            Image("shopify-robot-testdata")
+                            Image(uiImage: self.parallaxImageName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 60, height: 60)
@@ -72,7 +76,7 @@ struct ParallaxView: View {
                                     .font(.custom("AvenirNext-Medium", size: 15))
                                     .foregroundColor(.gray)
                                 /// Description
-                                Text("Description")
+                                Text(self.description)
                                     .font(.custom("AvenirNext-Demibold", size: 15))
                                     .foregroundColor(.black)
                             }

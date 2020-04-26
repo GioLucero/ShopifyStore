@@ -9,6 +9,8 @@
 import UIKit
 import SwiftyJSON
 
+import SwiftUI
+
 
 /// Model for a single collecion card.
 struct CollectionCard: Identifiable, Hashable {
@@ -26,10 +28,10 @@ struct CollectionCard: Identifiable, Hashable {
     var isOnSale: Bool
     
     /// initializing the collection information, and returning the model to house each element
-    init(withId id: Int, withImage image: UIImage, andBackgroundImage backgroundImage: String, andTitle title: String, andSubtitle subtitle: String, andDescription description: String, andIsOnSale isOnSale: Bool = false) {
+    init(withId id: Int, withImage image: String, andBackgroundImage backgroundImage: String, andTitle title: String, andSubtitle subtitle: String, andDescription description: String, andIsOnSale isOnSale: Bool = false) {
         
         self.id = id
-        self.image = image
+        self.image = UIImage(fromUrl: image)
         self.backgroundImage = backgroundImage
         self.title = title
         self.subtitle = subtitle
@@ -42,7 +44,7 @@ struct CollectionCard: Identifiable, Hashable {
         self.init(
             /// Storing the value from the custom collection JSON into the elements of the collection model
             withId: json["id"].intValue,
-            withImage: UIImage(fromUrl: json["image"]["src"].stringValue),
+            withImage: json["image"]["src"].stringValue,
             andBackgroundImage: "Featured-Card-Bg",
             andTitle: json["title"].stringValue,
             andSubtitle: json["sort_order"].stringValue,

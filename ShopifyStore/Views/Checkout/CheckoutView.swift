@@ -44,48 +44,35 @@ struct CheckoutOrder: View {
                     }
                 }
                 Section(header: Text("Shipping Details")) {
-                    VStack {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text("Items(\(shoppingCart.items.count)):")
-                                    .foregroundColor(.secondary)
-                                Text("Shipping and Handling:")
-                                    .foregroundColor(.secondary)
-                                Text("Total before tax:")
-                                    .foregroundColor(.secondary)
-                                Text("Estimated GST/HST:")
-                                    .foregroundColor(.secondary)
-                                Text("Order Total:")
-                                    .font(.system(size: 20, weight: .bold, design: .default))
-                                    .padding(.top, 15)
-                            }
+                    HStack {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("Items(\(shoppingCart.items.count)):")
+                                .foregroundColor(.secondary)
+                            Text("Shipping:")
+                                .foregroundColor(.secondary)
+                            Text("Total before tax:")
+                                .foregroundColor(.secondary)
+                            Text("Estimated GST/HST:")
+                                .foregroundColor(.secondary)
+                            Text("Order Total:")
+                                .font(.system(size: 20, weight: .bold, design: .default))
                             
-                            VStack {
-                                HStack {
-                                    VStack(alignment: .trailing, spacing: 5) {
-                                        Text("$\(shoppingCart.getTotalPrice(), specifier: "%.2f")")
-                                            .foregroundColor(.secondary)
-                                            .padding(.horizontal, 50)
-                                            .padding(.bottom, 12)
-                                            .padding(.top, 8)
-                                        Text("$\(shoppingCart.getShippingPrice(), specifier: "%.2f")")
-                                            .foregroundColor(.secondary)
-                                            .padding(.horizontal, 50)
-                                        Text("$\(shoppingCart.getSubtotal(), specifier: "%.2f")")
-                                            .foregroundColor(.secondary)
-                                            .padding(.horizontal, 50)
-                                        Text("$\(shoppingCart.getGST(), specifier: "%.2f")")
-                                            .foregroundColor(.secondary)
-                                            .padding(.horizontal, 50)
-                                        Text("$\(shoppingCart.getOrderTotal(), specifier: "%.2f")")
-                                            .font(.system(size: 20, weight: .bold, design: .default))
-                                            .foregroundColor((Color(.sRGB, red: 174/255, green: 22/255, blue: 0/255, opacity: 0.75)))
-                                            .padding(.top, 15)
-                                            .padding(.horizontal, 40)
-                                            .padding(.bottom, 10)
-                                    }
-                                }
-                            }
+                        }
+                        Spacer()
+                        VStack(alignment: .trailing, spacing: 5) {
+                            Text("$\(shoppingCart.getTotalPrice(), specifier: "%.2f")")
+                                .foregroundColor(.secondary)
+                            Text("$\(shoppingCart.getShippingPrice(), specifier: "%.2f")")
+                                .foregroundColor(.secondary)
+                            Text("$\(shoppingCart.getSubtotal(), specifier: "%.2f")")
+                                .foregroundColor(.secondary)
+                            Text("$\(shoppingCart.getGST(), specifier: "%.2f")")
+                                .foregroundColor(.secondary)
+                            Text("$\(shoppingCart.getOrderTotal(), specifier: "%.2f")")
+                                .font(.system(size: 20, weight: .bold, design: .default))
+                                .foregroundColor((Color(.sRGB, red: 174/255, green: 22/255, blue: 0/255, opacity: 0.75)))
+                            
+                            
                         }
                     }
                 }
@@ -111,7 +98,7 @@ struct CheckoutOrder: View {
                     Alert(title: Text("Thanks, your order has been shipped"), message: Text("Enjoy!"))
                 })
             }
-        .navigationBarTitle("Checkout Order")
+            .navigationBarTitle("Checkout Order")
         }
     }
 }
