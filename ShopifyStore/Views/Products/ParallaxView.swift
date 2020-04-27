@@ -38,7 +38,7 @@ struct ParallaxView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 300, height: 300)
-                                    .offset(x: 0, y: 50)
+                                    .offset(x: 30, y: 50)
                                     .background(Image("Featured-Card-Bg"))
                                     .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
                                     .clipped()
@@ -48,7 +48,7 @@ struct ParallaxView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 300, height: 300)
-                                    .offset(x: 0, y: 50)
+                                    .offset(x: 30, y: 50)
                                     .background(Image("Featured-Card-Bg"))
                                     .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
                                     .clipped()
@@ -77,9 +77,10 @@ struct ParallaxView: View {
                                     .foregroundColor(.gray)
                                 /// Description
                                 Text(self.description)
-                                    .font(.custom("AvenirNext-Demibold", size: 15))
+                                    .font(.custom("AvenirNext-Medium", size: 12))
                                     .foregroundColor(.black)
                             }
+                            .padding(.vertical, 5)
                             Spacer()
                         }
                             /// Border for product images

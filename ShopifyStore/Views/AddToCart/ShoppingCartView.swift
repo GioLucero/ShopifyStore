@@ -55,7 +55,7 @@ struct ShoppingCartView: View {
                                 .font(.headline)
                                 .fontWeight(.bold)
                                 .frame(width: 300, height: 50)
-                                .background(Color.orange)
+                                .background(Color(.sRGB, red: 1/255, green: 128/255, blue: 96/255, opacity: 0.5))
                                 .cornerRadius(18)
                                 .padding(.vertical, 15)
                         })
