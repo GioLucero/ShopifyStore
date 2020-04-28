@@ -44,12 +44,12 @@ struct CollectionCardView: View {
                 }
             }
             .padding(20)
-            .frame(width: 335, height: 300)
+            .frame(width: 360, height: 300)
             .background(Color("card5"))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .shadow(color: Color("card5").opacity(0.3), radius: 20, x: 0, y: 20)
         }
         .padding(10)
+        .shadow(radius: 10)
     }
 }
 

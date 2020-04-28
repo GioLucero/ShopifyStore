@@ -39,11 +39,7 @@ struct ParallaxView: View {
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 300, height: 300)
                                     .offset(x: 30, y: 50)
-                                    .background(Image("background1")
-                                        .frame(width: 100, height: 100)
-                                        .opacity(0.75)
-                                    )
-                                    .background(Image("parallax-bg"))
+                                    .background(Image("background1").opacity(0.75))
                                     .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
                                     .clipped()
                                     .offset(y: -geometry.frame(in: .global).minY)
@@ -53,11 +49,7 @@ struct ParallaxView: View {
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 300, height: 300)
                                     .offset(x: 30, y: 50)
-                                    .background(Image("background1")
-                                        .frame(width: 20, height: 20)
-                                        .opacity(0.75)
-                                    )
-                                    .background(Image("parallax-bg"))
+                                    .background(Image("background1").opacity(0.75))
                                     .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
                                     .clipped()
                                     .offset(y: -geometry.frame(in: .global).minY)
@@ -97,11 +89,12 @@ struct ParallaxView: View {
                             .padding(.horizontal, -10)
                         /// Display a list of products of the collection
                         ProductsView(productsCardViewModel: productsViewModel)
+                            .padding(.bottom, 100)
                     }
                 }
             }
         }
-        .edgesIgnoringSafeArea(.top)
+        .edgesIgnoringSafeArea(.all)
             /// Display data of this view when loading is successful
             .onAppear {
                 self.collectsViewModel.getCollectData(withCollectionId: self.customCollectionID) { productIds in

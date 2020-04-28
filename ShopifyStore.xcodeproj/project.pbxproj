@@ -130,10 +130,8 @@
 		844ED7B224512D5900BEF31A /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
-				84531D65240AFF5E000581A7 /* CollectionCardView.swift */,
-				841D62BF2416ACD90000624E /* TabBarView.swift */,
-				8413E8932437966000E0C5C7 /* SettingTabView.swift */,
-				84EC893B24169C35001ECA3F /* SearchBarView.swift */,
+				84F70EE324589F2B00447427 /* Tabs */,
+				844ED7B324512D7A00BEF31A /* AddToCart */,
 				84229ABD243AD95B00EFED7A /* ActivityIndicatorView.swift */,
 				84CD1EAA245340FC0078F891 /* ProfileView.swift */,
 			);
@@ -143,8 +141,8 @@
 		844ED7B324512D7A00BEF31A /* AddToCart */ = {
 			isa = PBXGroup;
 			children = (
-				844ED7B424512D8E00BEF31A /* ShoppingCart.swift */,
-				844ED7B624512D9600BEF31A /* ShoppingCartView.swift */,
+				84F70EE224589F0B00447427 /* ShoppingCart */,
+				84A8C9722452072200E274F3 /* Checkout */,
 			);
 			path = AddToCart;
 			sourceTree = "<group>";
@@ -169,8 +167,8 @@
 		84531D4D240AF4F8000581A7 /* ShopifyStore */ = {
 			isa = PBXGroup;
 			children = (
-				8497766524579143003417DB /* Lottie-Animation */,
 				840C271D242EBE92004E6E5B /* Extentions */,
+				8497766524579143003417DB /* Lottie-Animation */,
 				841D62C1241D590E0000624E /* NetworkManager */,
 				84531D63240AF900000581A7 /* Models */,
 				841D62BE2416ACC70000624E /* View Model */,
@@ -207,8 +205,6 @@
 		84531D64240AF90C000581A7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				84A8C9722452072200E274F3 /* Checkout */,
-				844ED7B324512D7A00BEF31A /* AddToCart */,
 				844ED7B224512D5900BEF31A /* MainViews */,
 				844ED7B124512D4300BEF31A /* Products */,
 			);
@@ -239,6 +235,26 @@
 				84A8C9702451517D00E274F3 /* CheckoutView.swift */,
 			);
 			path = Checkout;
+			sourceTree = "<group>";
+		};
+		84F70EE224589F0B00447427 /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				844ED7B424512D8E00BEF31A /* ShoppingCart.swift */,
+				844ED7B624512D9600BEF31A /* ShoppingCartView.swift */,
+			);
+			path = ShoppingCart;
+			sourceTree = "<group>";
+		};
+		84F70EE324589F2B00447427 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				841D62BF2416ACD90000624E /* TabBarView.swift */,
+				84531D65240AFF5E000581A7 /* CollectionCardView.swift */,
+				8413E8932437966000E0C5C7 /* SettingTabView.swift */,
+				84EC893B24169C35001ECA3F /* SearchBarView.swift */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

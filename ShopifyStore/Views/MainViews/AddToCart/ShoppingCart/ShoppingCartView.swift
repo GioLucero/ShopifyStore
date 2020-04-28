@@ -59,11 +59,11 @@ struct ShoppingCartView: View {
                         }, label: {
                             /// Call function to recieve total price
                             Text("Checkout Total: $\(shoppingCart.getTotalPrice(), specifier: "%.2f")")
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                                 .font(.headline)
                                 .fontWeight(.bold)
                                 .frame(width: 300, height: 50)
-                                .background(Color(.sRGB, red: 255/255, green: 208/255, blue: 133/255, opacity: 1))
+                                .background(Color(.sRGB, red: 128/255, green: 198/255, blue: 111/255).opacity(1))
                                 .cornerRadius(18)
                                 .padding(.vertical, 15)
                         })

@@ -53,7 +53,6 @@ struct ContentView: View {
             /// Display data when loading is successful
             .onAppear {
                 if self.isLoading {
-//                    UINavigationBar.appearance().backgroundColor = .(Color(.sRGB, red: 21/255, green: 1/255, blue: 62/255))
                     self.collectionCardViewModel.getCustomCollectionData { collectionCards in
                         self.collectionCardViewModel.collectionCards = collectionCards
                         self.isLoading = false
@@ -62,12 +61,6 @@ struct ContentView: View {
         }
     }
 }
-
-
-// Passing information to parallaxView banner
-//var collections = ProductCard(withId: 12, withtitle: "Featured Product", andDescription: "", andVendorName: "", andPrice: 1, andQuantity: 1, andImage: UIImage())
-
-
 
 
 struct ExtractedView: View {
@@ -100,10 +93,9 @@ struct ExtractedView: View {
             Spacer()
         }
         .padding(20)
-            //        .frame(width: show ? screen.width : screen.width - 60, height: show ? screen.height : 280)
-            .frame(width: 335, height: 125)
-            .background(Color(.sRGB, red: 85/255, green: 111/255, blue: 190/255).opacity(0.75))
-            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .shadow(color: Color(.sRGB, red: 255/255, green: 208/255, blue: 133/255, opacity: 0.5).opacity(0.3), radius: 20, x: 0, y: 20)
+        .frame(width: 360, height: 125)
+        .background(Color(.sRGB, red: 85/255, green: 111/255, blue: 190/255).opacity(0.75))
+        .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+        .shadow(color: Color(.sRGB, red: 255/255, green: 208/255, blue: 133/255, opacity: 0.5).opacity(0.3), radius: 20, x: 0, y: 20)
     }
 }
