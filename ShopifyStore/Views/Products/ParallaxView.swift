@@ -18,7 +18,7 @@ struct ParallaxView: View {
     /// Display a loading screen as default
     @State var isLoading = true
     
-    let description: String
+    let title: String
     let parallaxImageName: UIImage
     let customCollectionID: Int
     
@@ -39,7 +39,11 @@ struct ParallaxView: View {
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 300, height: 300)
                                     .offset(x: 30, y: 50)
-                                    .background(Image("Featured-Card-Bg"))
+                                    .background(Image("background1")
+                                        .frame(width: 100, height: 100)
+                                        .opacity(0.75)
+                                    )
+                                    .background(Image("parallax-bg"))
                                     .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
                                     .clipped()
                                     .offset(y: -geometry.frame(in: .global).minY)
@@ -49,7 +53,11 @@ struct ParallaxView: View {
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 300, height: 300)
                                     .offset(x: 30, y: 50)
-                                    .background(Image("Featured-Card-Bg"))
+                                    .background(Image("background1")
+                                        .frame(width: 20, height: 20)
+                                        .opacity(0.75)
+                                    )
+                                    .background(Image("parallax-bg"))
                                     .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
                                     .clipped()
                                     .offset(y: -geometry.frame(in: .global).minY)
@@ -76,7 +84,7 @@ struct ParallaxView: View {
                                     .font(.custom("AvenirNext-Medium", size: 15))
                                     .foregroundColor(.gray)
                                 /// Description
-                                Text(self.description)
+                                Text(self.title.uppercased())
                                     .font(.custom("AvenirNext-Medium", size: 12))
                                     .foregroundColor(.black)
                             }
@@ -84,7 +92,7 @@ struct ParallaxView: View {
                             Spacer()
                         }
                             /// Border for product images
-                            .background(LinearGradient(gradient: Gradient(colors: [Color(.sRGB, red: 183/255, green: 283/255, blue: 169/255, opacity: 0.85),.white]), startPoint: .trailing, endPoint: .leading))
+                            .background(LinearGradient(gradient: Gradient(colors: [Color(.sRGB, red: 200/255, green: 215/255, blue: 255/255, opacity: 0.5),.white]),startPoint: .trailing, endPoint: .leading))
                             .offset(x: 10, y: -8)
                             .padding(.horizontal, -10)
                         /// Display a list of products of the collection

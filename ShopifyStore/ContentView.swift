@@ -31,7 +31,7 @@ struct ContentView: View {
                         ForEach(collectionCardViewModel.collectionCards, id: \.self) { collectionCard in
                             VStack(alignment: .leading) {
                                 /// Once the collection clicked, it will direct the user to the next page
-                                NavigationLink(destination: ParallaxView(description: collectionCard.description, parallaxImageName: collectionCard.image, customCollectionID: collectionCard.id)) {
+                                NavigationLink(destination: ParallaxView(title: collectionCard.title, parallaxImageName: collectionCard.image, customCollectionID: collectionCard.id)) {
                                     CollectionCardView(customCollectionCard: collectionCard)
                                 }
                                 .buttonStyle(PlainButtonStyle())
@@ -79,7 +79,7 @@ struct ExtractedView: View {
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
                     Text("18 Collections")
-                        .foregroundColor(Color.white.opacity(0.7))
+                        .foregroundColor(Color.white.opacity(0.75))
                 }
                 Spacer()
                 ZStack {
@@ -102,8 +102,8 @@ struct ExtractedView: View {
         .padding(20)
             //        .frame(width: show ? screen.width : screen.width - 60, height: show ? screen.height : 280)
             .frame(width: 335, height: 125)
-            .background(Color(.sRGB, red: 21/255, green: 1/255, blue: 62/255))
+            .background(Color(.sRGB, red: 85/255, green: 111/255, blue: 190/255).opacity(0.75))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .shadow(color: Color(.sRGB, red: 21/255, green: 1/255, blue: 62/255, opacity: 0.5).opacity(0.3), radius: 20, x: 0, y: 20)
+            .shadow(color: Color(.sRGB, red: 255/255, green: 208/255, blue: 133/255, opacity: 0.5).opacity(0.3), radius: 20, x: 0, y: 20)
     }
 }

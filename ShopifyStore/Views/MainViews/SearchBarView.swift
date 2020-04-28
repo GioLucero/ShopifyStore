@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SearchTab: View {
-    let array = ["Peter", "Paul", "Mary", "Anna-Lena", "George", "John", "Greg", "Thomas", "Robert", "Bernie", "Mike", "Benno", "Hugo", "Miles", "Michael", "Mikel", "Tim", "Tom", "Lottie", "Lorrie", "Barbara"]
+    let array = ["Aerodynamic", "Awesome", "Durable", "Enormous", "Ergonomic", "Fantastic", "Gorgeous", "Heavy Duty", "Incredible", "Intellegent", "Lightweight", "Mediocre", "Practical", "Rustic", "Sleek", "Small", "Synergistic"]
     @State private var searchText = ""
     @State private var showCancelButton: Bool = false
     /// Passing collection names into the search bar array

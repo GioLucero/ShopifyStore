@@ -16,6 +16,8 @@ struct SettingsTab: View {
    @State var date = Date()
    @State var email = ""
    @State var submit = false
+    
+    let array = ["Aerodynamic", "Awesome", "Durable", "Enormous", "Ergonomic", "Fantastic", "Gorgeous", "Heavy Duty", "Incredible", "Intellegent", "Lightweight", "Mediocre", "Practical", "Rustic", "Sleek", "Small", "Synergistic"]
 
    var body: some View {
       NavigationView {
@@ -27,8 +29,9 @@ struct SettingsTab: View {
                Text("\(number) Notification\(number > 1 ? "s" : "") per week")
             }
             Picker(selection: $selection, label: Text("Favourite Robot")) {
-               Text("Awesome").tag(1)
-               Text("React").tag(2)
+                ForEach(array, id: \.self) { names in
+                    Text("\(self.array[0])").tag(self.array.count)
+                }
             }
             DatePicker(selection: $date, label: {
                Text("Date")

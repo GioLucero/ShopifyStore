@@ -31,8 +31,6 @@ struct CheckoutOrder: View {
     @State var submit = false
     
     @EnvironmentObject var shoppingCart: ShoppingCart
-    //    @Published var items = [ProductCard]()
-    //    @State var shippingPrice = 7.99
     
     var body: some View {
         HStack(alignment: .top) {
@@ -71,8 +69,6 @@ struct CheckoutOrder: View {
                             Text("$\(shoppingCart.getOrderTotal(), specifier: "%.2f")")
                                 .font(.system(size: 20, weight: .bold, design: .default))
                                 .foregroundColor((Color(.sRGB, red: 174/255, green: 22/255, blue: 0/255, opacity: 0.75)))
-                            
-                            
                         }
                     }
                 }

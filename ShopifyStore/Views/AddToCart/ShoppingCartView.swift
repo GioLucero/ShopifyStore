@@ -18,10 +18,18 @@ struct ShoppingCartView: View {
         NavigationView {
             
             if shoppingCart.items.isEmpty {
-
                 VStack(alignment: .center) {
-                    Text("Your Shopping Cart is Empty. Please Add items to your cart.")
+                    LottieView(fileName: "LottieRobot")
+                        .frame(width: 200, height: 200)
+                    Text("Your Shopping Cart is Empty.")
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .padding(.bottom, 10)
+                        .foregroundColor(.primary)
+                    Text("Please Add items to your cart.")
+                        .font(.system(size: 14, weight: .medium, design: .default))
+                        .foregroundColor(.secondary)
                 }
+                .padding(.bottom, 30)
                 
                 .navigationBarTitle("Your Shopping Cart")
                 
@@ -51,11 +59,11 @@ struct ShoppingCartView: View {
                         }, label: {
                             /// Call function to recieve total price
                             Text("Checkout Total: $\(shoppingCart.getTotalPrice(), specifier: "%.2f")")
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                                 .font(.headline)
                                 .fontWeight(.bold)
                                 .frame(width: 300, height: 50)
-                                .background(Color(.sRGB, red: 1/255, green: 128/255, blue: 96/255, opacity: 0.5))
+                                .background(Color(.sRGB, red: 255/255, green: 208/255, blue: 133/255, opacity: 1))
                                 .cornerRadius(18)
                                 .padding(.vertical, 15)
                         })

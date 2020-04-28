@@ -37,7 +37,9 @@ struct CollectionCardView: View {
                         .frame(height: 200, alignment: .top)
                         .background(Image("background1")
                             .resizable()
-                            .frame(width: 275, height: 150)
+                            .foregroundColor(.white)
+                            .frame(width: 250, height: 150)
+                            .opacity(0.7)
                     )
                 }
             }

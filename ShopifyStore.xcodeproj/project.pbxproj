@@ -18,6 +18,7 @@
 		84229ABE243AD95B00EFED7A /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84229ABD243AD95B00EFED7A /* ActivityIndicatorView.swift */; };
 		844ED7B524512D8E00BEF31A /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844ED7B424512D8E00BEF31A /* ShoppingCart.swift */; };
 		844ED7B724512D9600BEF31A /* ShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844ED7B624512D9600BEF31A /* ShoppingCartView.swift */; };
+		844FBE9F24579DCE00333D5A /* LottieRobot.json in Resources */ = {isa = PBXBuildFile; fileRef = 844FBE9E24579DCE00333D5A /* LottieRobot.json */; };
 		84531D4F240AF4F8000581A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84531D4E240AF4F8000581A7 /* AppDelegate.swift */; };
 		84531D51240AF4F8000581A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84531D50240AF4F8000581A7 /* SceneDelegate.swift */; };
 		84531D53240AF4F8000581A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84531D52240AF4F8000581A7 /* ContentView.swift */; };
@@ -28,6 +29,8 @@
 		8491B4002423ED2E002A3C1B /* CollectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491B3FF2423ED2E002A3C1B /* CollectionCard.swift */; };
 		8491B4022426C4CA002A3C1B /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491B4012426C4CA002A3C1B /* CollectionViewModel.swift */; };
 		8491B4062426D77D002A3C1B /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491B4052426D77D002A3C1B /* ProductsViewModel.swift */; };
+		8497766A2457926E003417DB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 849776692457926E003417DB /* Lottie */; };
+		8497766C2457949F003417DB /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8497766B2457949F003417DB /* LottieView.swift */; };
 		849EB60E244FF4D600E0357C /* shopifystore-screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 849EB60D244FF4D600E0357C /* shopifystore-screenshot.png */; };
 		84A8C9712451517D00E274F3 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A8C9702451517D00E274F3 /* CheckoutView.swift */; };
 		84AE98E0240B28A400ED3ADE /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE98DF240B28A400ED3ADE /* ProductCardView.swift */; };
@@ -36,6 +39,7 @@
 		84CD1EAB245340FC0078F891 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CD1EAA245340FC0078F891 /* ProfileView.swift */; };
 		84EC893A2415A58B001ECA3F /* ParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC89392415A58B001ECA3F /* ParallaxView.swift */; };
 		84EC893C24169C36001ECA3F /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC893B24169C35001ECA3F /* SearchBarView.swift */; };
+		84F70EE12457E06000447427 /* LottieCheckMark.json in Resources */ = {isa = PBXBuildFile; fileRef = 84F70EE02457E06000447427 /* LottieCheckMark.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,7 @@
 		84229ABD243AD95B00EFED7A /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		844ED7B424512D8E00BEF31A /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		844ED7B624512D9600BEF31A /* ShoppingCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartView.swift; sourceTree = "<group>"; };
+		844FBE9E24579DCE00333D5A /* LottieRobot.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieRobot.json; sourceTree = "<group>"; };
 		84531D4B240AF4F8000581A7 /* ShopifyStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopifyStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84531D4E240AF4F8000581A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84531D50240AF4F8000581A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +65,7 @@
 		8491B3FF2423ED2E002A3C1B /* CollectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCard.swift; sourceTree = "<group>"; };
 		8491B4012426C4CA002A3C1B /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		8491B4052426D77D002A3C1B /* ProductsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
+		8497766B2457949F003417DB /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		849EB60D244FF4D600E0357C /* shopifystore-screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shopifystore-screenshot.png"; sourceTree = "<group>"; };
 		84A8C9702451517D00E274F3 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		84AE98DF240B28A400ED3ADE /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 		84CD1EAA245340FC0078F891 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		84EC89392415A58B001ECA3F /* ParallaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxView.swift; sourceTree = "<group>"; };
 		84EC893B24169C35001ECA3F /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		84F70EE02457E06000447427 /* LottieCheckMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieCheckMark.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +84,7 @@
 			files = (
 				841D62C9241D59BC0000624E /* SwiftyJSON in Frameworks */,
 				841D62C6241D59920000624E /* Alamofire in Frameworks */,
+				8497766A2457926E003417DB /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +169,7 @@
 		84531D4D240AF4F8000581A7 /* ShopifyStore */ = {
 			isa = PBXGroup;
 			children = (
+				8497766524579143003417DB /* Lottie-Animation */,
 				840C271D242EBE92004E6E5B /* Extentions */,
 				841D62C1241D590E0000624E /* NetworkManager */,
 				84531D63240AF900000581A7 /* Models */,
@@ -206,6 +215,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8497766524579143003417DB /* Lottie-Animation */ = {
+			isa = PBXGroup;
+			children = (
+				84F70EE02457E06000447427 /* LottieCheckMark.json */,
+				844FBE9E24579DCE00333D5A /* LottieRobot.json */,
+				8497766B2457949F003417DB /* LottieView.swift */,
+			);
+			path = "Lottie-Animation";
+			sourceTree = "<group>";
+		};
 		849EB60C244FF4A200E0357C /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +260,7 @@
 			packageProductDependencies = (
 				841D62C5241D59920000624E /* Alamofire */,
 				841D62C8241D59BC0000624E /* SwiftyJSON */,
+				849776692457926E003417DB /* Lottie */,
 			);
 			productName = ShopifyStore;
 			productReference = 84531D4B240AF4F8000581A7 /* ShopifyStore.app */;
@@ -273,6 +293,7 @@
 			packageReferences = (
 				841D62C4241D59920000624E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				841D62C7241D59BC0000624E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				849776682457926E003417DB /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 84531D4C240AF4F8000581A7 /* Products */;
 			projectDirPath = "";
@@ -292,6 +313,8 @@
 				84531D5B240AF4FC000581A7 /* LaunchScreen.storyboard in Resources */,
 				84531D58240AF4FC000581A7 /* Preview Assets.xcassets in Resources */,
 				84531D55240AF4FC000581A7 /* Assets.xcassets in Resources */,
+				844FBE9F24579DCE00333D5A /* LottieRobot.json in Resources */,
+				84F70EE12457E06000447427 /* LottieCheckMark.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +348,7 @@
 				844ED7B724512D9600BEF31A /* ShoppingCartView.swift in Sources */,
 				841D62C02416ACD90000624E /* TabBarView.swift in Sources */,
 				84AE98E6240C46CA00ED3ADE /* ProductCard.swift in Sources */,
+				8497766C2457949F003417DB /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +560,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		849776682457926E003417DB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -548,6 +580,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 841D62C7241D59BC0000624E /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		849776692457926E003417DB /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 849776682457926E003417DB /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
