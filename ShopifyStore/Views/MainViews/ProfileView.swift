@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// Creating a view to display links to personal information 
 struct ProfileView: View {
     var body: some View {
         VStack(spacing: 20) {

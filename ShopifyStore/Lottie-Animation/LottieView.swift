@@ -10,7 +10,8 @@ import SwiftUI
 import Lottie
 
 struct LottieView: UIViewRepresentable {
-
+    
+    //Creating a view for the animation
     let animationView = AnimationView()
 
     var fileName: String

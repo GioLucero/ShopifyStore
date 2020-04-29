@@ -10,9 +10,12 @@ import SwiftUI
 
 /// Display a single product card
 struct ProductCardView: View {
+    /// Model that handles the ProductCard data
     @State var productCard: ProductCard
+    /// While GET button is not pressed, set variables to false
     @State var isShoppingCartView = false
     @State var showAddedItemAlert = false
+    /// Model that holds the shopping cart data
     @EnvironmentObject var shoppingCart: ShoppingCart
     
     var body: some View {
@@ -74,8 +77,3 @@ struct ProductCardView: View {
     }
 }
 
-//struct ProductView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProductCardView(productCard: ProductCard(withId: 10, withtitle: "Concrete Clock", andVendorName: "Curry Banca", andPrice: 34.5, andQuantity: 20, andImage: "shopify-robot-testdata", andIsFavourite: true))
-//    }
-//}

@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// Settings tab within the tab bar
 struct SettingsTab: View {
 
    @State var receive = false

@@ -95,7 +95,7 @@ struct ParallaxView: View {
             }
         }
         .edgesIgnoringSafeArea(.all)
-            /// Display data of this view when loading is successful
+            /// Display data of this view once successfully loaded
             .onAppear {
                 self.collectsViewModel.getCollectData(withCollectionId: self.customCollectionID) { productIds in
                     self.productsViewModel.getProductData(withProductIds: productIds) { productCards in
@@ -106,10 +106,3 @@ struct ParallaxView: View {
         }
     }
 }
-
-//struct ParallaxView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ParallaxView(productCard: ProductCard(withId: 1, withtitle: "Featured Product", andDescription: "", andVendorName: "", andPrice: 12, andQuantity: 1, andImage: UIImage()), customCollectionID: 1)
-//
-//    }
-//}
