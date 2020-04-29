@@ -47,6 +47,7 @@
 		84F70EF1245A0CBB00447427 /* checkout-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F70EEA245A0CBB00447427 /* checkout-screen.png */; };
 		84F70EF2245A0CBB00447427 /* itemadded-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F70EEB245A0CBB00447427 /* itemadded-screen.png */; };
 		84F70EF3245A0CBB00447427 /* search-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F70EEC245A0CBB00447427 /* search-screen.png */; };
+		84F70EF5245A116800447427 /* darkmode-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F70EF4245A116800447427 /* darkmode-screen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		84F70EEA245A0CBB00447427 /* checkout-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkout-screen.png"; sourceTree = "<group>"; };
 		84F70EEB245A0CBB00447427 /* itemadded-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "itemadded-screen.png"; sourceTree = "<group>"; };
 		84F70EEC245A0CBB00447427 /* search-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-screen.png"; sourceTree = "<group>"; };
+		84F70EF4245A116800447427 /* darkmode-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "darkmode-screen.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				84F70EE7245A0CBA00447427 /* parallax-screen.png */,
 				84F70EE9245A0CBB00447427 /* products-screen.png */,
 				84F70EE8245A0CBA00447427 /* profile-screen.png */,
+				84F70EF4245A116800447427 /* darkmode-screen.png */,
 				84F70EEC245A0CBB00447427 /* search-screen.png */,
 				84F70EE6245A0CBA00447427 /* shoppingcart-screen.png */,
 				84F70EE4245A0A5400447427 /* home-screen.png */,
@@ -356,6 +359,7 @@
 				84531D55240AF4FC000581A7 /* Assets.xcassets in Resources */,
 				844FBE9F24579DCE00333D5A /* LottieRobot.json in Resources */,
 				84F70EF1245A0CBB00447427 /* checkout-screen.png in Resources */,
+				84F70EF5245A116800447427 /* darkmode-screen.png in Resources */,
 				84F70EE5245A0A5400447427 /* home-screen.png in Resources */,
 				84F70EF3245A0CBB00447427 /* search-screen.png in Resources */,
 				84F70EE12457E06000447427 /* LottieCheckMark.json in Resources */,
