@@ -11,19 +11,10 @@ This project uses the following third-party Swift packages and dependencies:
 * <b>SwiftyJSON</b> - for parsing data  @ https://github.com/SwiftyJSON/SwiftyJSON
 * <b>Lottie</b> - to render animations natively @ https://github.com/airbnb/lottie-ios
 
-# Getting Started
-
-<b>System Requirements</b>
-<br/>
-macoS Mojave or later is required to build this project.
-
-<b>Instructions</b>
-<br/>
-To clone this project in Xcode, click “Clone or download” and select “Open in Xcode”.
-
-
 # Features
 This project uses three different API's, from which we collect our data. The first is the <b>custom collection API</b> that provides us with the collection data. <br/>
+
+
 
 This API is represented as:
 
