@@ -28,7 +28,6 @@ class NetworkManager {
     public func getCardData(withURL url: String, andParameters parametersTemp: Parameters = Parameters(), completion: @escaping (JSON) -> Void) {
         
         /// Parameters being set to perform the GET request
-        
         var parameters = parametersTemp
         
         /// Using the access token to access the API

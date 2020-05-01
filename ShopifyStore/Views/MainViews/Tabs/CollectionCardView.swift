@@ -45,7 +45,7 @@ struct CollectionCardView: View {
             }
             .padding(20)
             .frame(width: 360, height: 300)
-            .background(Color("card5"))
+            .background(Color("color1"))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         }
         .padding(10)

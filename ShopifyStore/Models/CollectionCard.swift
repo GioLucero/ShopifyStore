@@ -25,10 +25,9 @@ struct CollectionCard: Identifiable, Hashable {
     /// subtitle within the collection card
     var subtitle: String
     var description: String
-    var isOnSale: Bool
     
     /// initializing the collection information, and returning the model to house each element
-    init(withId id: Int, withImage image: String, andBackgroundImage backgroundImage: String, andTitle title: String, andSubtitle subtitle: String, andDescription description: String, andIsOnSale isOnSale: Bool = false) {
+    init(withId id: Int, withImage image: String, andBackgroundImage backgroundImage: String, andTitle title: String, andSubtitle subtitle: String, andDescription description: String) {
         
         self.id = id
         self.image = UIImage(fromUrl: image)
@@ -36,7 +35,6 @@ struct CollectionCard: Identifiable, Hashable {
         self.title = title
         self.subtitle = subtitle
         self.description = description
-        self.isOnSale = isOnSale
     }
     
     /// This initialization allows us to fetch the elements from our Collection model from the custom collections JSON
@@ -45,7 +43,7 @@ struct CollectionCard: Identifiable, Hashable {
             /// Storing the value from the custom collection JSON into the elements of the collection model
             withId: json["id"].intValue,
             withImage: json["image"]["src"].stringValue,
-            andBackgroundImage: "Featured-Card-Bg",
+            andBackgroundImage: "background1",
             andTitle: json["title"].stringValue,
             andSubtitle: json["sort_order"].stringValue,
             andDescription: json["body_html"].stringValue

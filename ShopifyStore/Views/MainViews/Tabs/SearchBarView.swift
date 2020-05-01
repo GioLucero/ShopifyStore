@@ -24,7 +24,7 @@ struct SearchTab: View {
                 HStack {
                     HStack {
                         Image(systemName: "magnifyingglass")
-
+                        /// Text bar
                         TextField("search", text: $searchText, onEditingChanged: { isEditing in
                             self.showCancelButton = true
                         }, onCommit: {

@@ -11,8 +11,10 @@ import SwiftUI
 import Combine
 import Alamofire
 
+/// Handles all the data for product cards
+/// Any changes in this file will update other views - SOURCE OF TRUTH
 class ProductsViewModel: ObservableObject {
-    // any changes in this file will update other views - SOURCE OF TRUTH
+    /// Shared singleton of the global instance of CollectionViewModel
     static let shared = ProductsViewModel()
     
     let didChange = PassthroughSubject<ProductsViewModel, Never>()
@@ -23,20 +25,20 @@ class ProductsViewModel: ObservableObject {
         }
     }
     
-    // Not only gets the data from backend, but also parses it to what we want.
+    /// This function give us the parsed JSON array
     public func getProductData(withProductIds productIds: [Int], completion: @escaping ([ProductCard]) -> Void) {
         
-        
         let productIdsStringConversion: String = productIds.map { String($0) }.joined(separator: ",")
-        
+        /// Passing in parameters for getCardData function
         let parameter: Parameters = [
             "ids": productIdsStringConversion
         ]
         
+        /// Passing in the products url for API call
         NetworkManager.shared.getCardData(withURL: NetworkManager.productURL, andParameters: parameter) { productCardsJSON in
-                
+            /// Iterating through 'products' array - accessing first key element
             let productCards = productCardsJSON["products"].arrayValue.map {
-                // $0 - accesses the key elemenent
+                /// $0 - accesses the key elemenent
                 ProductCard(withJSON: $0)
             }
             completion(productCards)

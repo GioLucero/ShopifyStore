@@ -24,7 +24,7 @@ struct ContentView: View {
             } else {
                 NavigationView {
                     ScrollView {
-                        ExtractedView()
+                        HeaderView()
                             .padding(.vertical, 10)
                         // insert featured banner here
                         /// Creating a list of collection cards
@@ -62,8 +62,8 @@ struct ContentView: View {
     }
 }
 
-
-struct ExtractedView: View {
+/// Displays header card above all collections in home tab
+struct HeaderView: View {
     var body: some View {
         VStack {
             HStack(alignment: .top) {
@@ -71,7 +71,7 @@ struct ExtractedView: View {
                     Text("Fall Products")
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
-                    Text("18 Collections")
+                    Text("17 Collections")
                         .foregroundColor(Color.white.opacity(0.75))
                 }
                 Spacer()

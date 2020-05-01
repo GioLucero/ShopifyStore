@@ -29,11 +29,6 @@ struct SettingsTab: View {
             Stepper(value: $number, in: 1...10) {
                Text("\(number) Notification\(number > 1 ? "s" : "") per week")
             }
-            Picker(selection: $selection, label: Text("Favourite Robot")) {
-                ForEach(array, id: \.self) { names in
-                    Text("\(self.array[0])").tag(self.array.count)
-                }
-            }
             DatePicker(selection: $date, label: {
                Text("Date")
             })

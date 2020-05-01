@@ -18,6 +18,7 @@ struct TabBar: View {
     private var badgePosition: CGFloat = 2
     private var tabsCount: CGFloat = 4
     
+    /// Displays tab bar with the ContentView as the home view
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .bottomLeading) {

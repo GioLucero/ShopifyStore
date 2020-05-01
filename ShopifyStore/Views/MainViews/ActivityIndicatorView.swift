@@ -10,7 +10,7 @@ import SwiftUI
 
 /// displays loading animation while data is being loaded
 struct ActivityIndicator: UIViewRepresentable {
-
+    
     @Binding var isAnimating: Bool
     let style: UIActivityIndicatorView.Style
     
