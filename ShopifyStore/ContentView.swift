@@ -9,6 +9,7 @@
 import SwiftUI
 import Combine
 
+/// Main view which displays all collections which store various products
 struct ContentView: View {
     /// Model that stores the data from the customCollection API
     @ObservedObject var collectionCardViewModel = CollectionViewModel.shared
@@ -33,6 +34,8 @@ struct ContentView: View {
                                 /// Once the collection clicked, it will direct the user to the next page
                                 NavigationLink(destination: ParallaxView(title: collectionCard.title, parallaxImageName: collectionCard.image, customCollectionID: collectionCard.id)) {
                                     CollectionCardView(customCollectionCard: collectionCard)
+                                        .padding(.top, 5)
+                                        .padding(.horizontal, 10)
                                 }
                                 .buttonStyle(PlainButtonStyle())
                             }

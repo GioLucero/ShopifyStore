@@ -8,21 +8,21 @@
 
 import SwiftUI
 
+/// Model that handles all the data for the shopping cart view
 class ShoppingCart: ObservableObject {
     @Published var items = [ProductCard]()
     
-    /// function to return the total checkout price
+    /// Function to return the total checkout price
     func getTotalPrice() -> Double {
         var totalPrice: Double = 0.0
-        // iterate through items array
-        // add the new item price to existing item price
-        // return the price
+
         for productCard in items {
             totalPrice += productCard.price
         }
         return totalPrice
     }
     
+    /// Returns shipping price
     func getShippingPrice() -> Double {
         var shippingPrice: Double = 0.0
         let totalPrice = getTotalPrice()
@@ -35,6 +35,7 @@ class ShoppingCart: ObservableObject {
         return shippingPrice
     }
     
+    /// Returns total before tax
     func getSubtotal() -> Double {
         // subtotal = cost of products + shipping
         let totalPrice = getTotalPrice()
@@ -49,6 +50,7 @@ class ShoppingCart: ObservableObject {
         return subtotal
     }
 
+    /// Return task of given items
     func getGST() -> Double {
         // GST = subtotal * .13
         var GST: Double = 0.0
@@ -62,6 +64,7 @@ class ShoppingCart: ObservableObject {
         return GST
     }
 
+    /// Returns the total price of the order
     func getOrderTotal() -> Double {
         // total = subtotal + GST
         let orderTotal: Double = getSubtotal() + getGST()

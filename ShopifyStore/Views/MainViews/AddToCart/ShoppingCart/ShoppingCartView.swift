@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct ShoppingCartView: View {
-    
+    /// Model that handles all the data for the shopping cart view
     @EnvironmentObject var shoppingCart: ShoppingCart
-    
+    /// Handling the state of our views - when set to 1, the navigation link to checkout view is presented
     @State private var action: Int? = 0
     
     var body: some View {

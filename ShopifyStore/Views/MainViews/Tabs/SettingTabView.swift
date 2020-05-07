@@ -26,9 +26,6 @@ struct SettingsTab: View {
             Toggle(isOn: $receive) {
                Text("Recieve Notifications")
             }
-            Stepper(value: $number, in: 1...10) {
-               Text("\(number) Notification\(number > 1 ? "s" : "") per week")
-            }
             DatePicker(selection: $date, label: {
                Text("Date")
             })

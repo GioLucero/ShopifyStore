@@ -15,23 +15,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shopify-logo" translatesAutoresizingMaskIntoConstraints="NO" id="osH-AC-vE4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopify-logo" translatesAutoresizingMaskIntoConstraints="NO" id="osH-AC-vE4">
                                 <rect key="frame" x="87" y="288" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="osH-AC-vE4" secondAttribute="height" multiplier="15:8" id="Fdc-qp-q7r"/>
+                                    <constraint firstAttribute="height" constant="128" id="NxE-da-lnP"/>
+                                    <constraint firstAttribute="width" constant="240" id="sxR-IH-4kQ"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shopify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dje-vc-nqZ">
-                                <rect key="frame" x="138" y="450" width="138" height="48"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <rect key="frame" x="138" y="462" width="138" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="2Yu-ia-ZtN"/>
+                                    <constraint firstAttribute="height" constant="36" id="2xM-KV-F4n"/>
+                                    <constraint firstAttribute="width" secondItem="Dje-vc-nqZ" secondAttribute="height" multiplier="23:6" id="cpO-nl-Sfx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.15294117647058825" green="0.18431372549019609" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.43529411764705883" blue="0.74509803921568629" alpha="0.75" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Dje-vc-nqZ" firstAttribute="centerX" secondItem="osH-AC-vE4" secondAttribute="centerX" id="2cd-kh-D5e"/>
-                            <constraint firstItem="Dje-vc-nqZ" firstAttribute="top" secondItem="osH-AC-vE4" secondAttribute="bottom" constant="34" id="6pY-0f-9KG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dje-vc-nqZ" secondAttribute="bottom" constant="364" id="H11-DW-Nra"/>
-                            <constraint firstItem="Dje-vc-nqZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jfV-MR-bmk"/>
-                            <constraint firstItem="Dje-vc-nqZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="shJ-9Y-Cob"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dje-vc-nqZ" secondAttribute="trailing" constant="118" id="3qd-23-tCj"/>
+                            <constraint firstItem="Dje-vc-nqZ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="118" id="5Ry-Yq-dYS"/>
+                            <constraint firstItem="osH-AC-vE4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="67" id="GEr-7K-qwn"/>
+                            <constraint firstItem="Dje-vc-nqZ" firstAttribute="top" secondItem="osH-AC-vE4" secondAttribute="bottom" constant="46" id="HQ6-yN-zgk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="osH-AC-vE4" secondAttribute="trailing" constant="67" id="bRp-r3-9A2"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Dje-vc-nqZ" secondAttribute="bottom" constant="364" id="oDA-B7-Eta"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

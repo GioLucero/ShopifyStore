@@ -23,11 +23,10 @@ struct CheckoutView_Previews: PreviewProvider {
 
 
 struct CheckoutOrder: View {
+    /// Initializing default settings for components of the form view
     @State var receive = false
-    @State var number = 1
     @State var selection = 1
     @State var date = Date()
-    @State var email = ""
     @State var submit = false
     
     @EnvironmentObject var shoppingCart: ShoppingCart
@@ -39,6 +38,9 @@ struct CheckoutOrder: View {
                     Picker(selection: $selection, label: Text("Shopify Office")) {
                         Text("80 Spadina Ave #400, Toronto, ON M5V 2J4").tag(1)
                         Text("150 Elgin St, Ottawa, ON K2P 1L4").tag(2)
+                        Text("490 Rue De La Gauchetière O, Montréal, QC H2Z 0B3").tag(3)
+                        Text("57 Erb St W, Waterloo, ON N2L 6C2").tag(4)
+                        Text("33 New Montgomery St #750, San Francisco, CA 94105").tag(5)
                     }
                 }
                 Section(header: Text("Shipping Details")) {
@@ -86,12 +88,15 @@ struct CheckoutOrder: View {
                     Text("Date")
                 })
                 Section {
-                    Button(action: { self.submit.toggle() }) {
+                    Button(action: {
+                        self.submit.toggle()
+                        self.shoppingCart.items.removeAll()
+                    }) {
                         Text("Submit Order")
                     }
                 }
                 .alert(isPresented: $submit, content: {
-                    Alert(title: Text("Thanks, your order has been shipped"), message: Text("Enjoy!"))
+                    Alert(title: Text("Your order has been shipped"), message: Text("Enjoy!"))
                 })
             }
             .navigationBarTitle("Checkout Order")
