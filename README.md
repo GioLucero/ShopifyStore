@@ -14,21 +14,21 @@ This project uses the following third-party Swift packages and dependencies:
 * <b>Lottie</b> - to render animations natively @ https://github.com/airbnb/lottie-ios
 
 # Features
-This project uses three different API's, from which we collect our data. The first is the <b>custom collection API</b> that provides us with the collection data. <br/>
+This project uses three different API's, from which we collect our data. The first is the <b>custom collection API</b> that provides us with the data of collection. <br/>
 
 This API is represented as:
 
 ```
 https://shopicruit.myshopify.com/admin/custom_collections.json
 ```
-The second API used in this project is the <b>products API</b>, which provides us with the data on every product of every collection. <br/>
+The second API is the <b>products API</b>, which provides us with the data on every product of each collection. <br/>
 
 The API is represented as: 
 
 ```
 https://shopicruit.myshopify.com/admin/products.json
 ```
-The third API used in this project is the <b>collects API</b>, which allows us to group products to their corresponding collection. <br/>
+The third API is the <b>collects API</b>, which allows us to group products to their corresponding collection. <br/>
 
 The API is represented as:
 
@@ -46,10 +46,11 @@ The design structure used in this app is Model, View, View Model (MVVM)
 * <b>ViewModels:</b> includes files that reference data objects from the models so that they may be managed and presented 
 * <b>Assets.xcassets:</b> include additional images used in the project
 * <b>TabBar:</b> Our root view, which include all views that can be selected through the tab bar
+* <b>ContentView</b> ContentView is set as the main view of the tab bar 
  
  # Code Structure
  # Network Manager
- All API related code can be found within our NetworkManger class, which consists of a getData function to fetch data through an Alamofire API call. The parameters set within this function allows us to pass in any of the three API’s used in the project. All JSON parsing is done within each corresponding model. <br/>
+All API related code can be found within our NetworkManger class, which consists of a getData function to fetch data through an Alamofire API call. The parameters set within this function allows us to pass in any of the three API’s used in the project. All JSON parsing is done within each corresponding model. <br/>
  
  Here is an example:
  
@@ -83,7 +84,7 @@ public func getCardData(withURL url: String, andParameters parametersTemp: Param
  ```
  
 # Models
-Each model filters the data we want from the API. To do so, each model contains two initializers, (1) to initialize a set of variables for our data, and (2) to parse the JSON  6                               , using <b>SwiftyJSON</b>. <br/>
+Each model filters the data we want from the API. To do so, each model contains two initializers: (1) to initialize a set of variables to store in our data model, and (2) to parse the JSON recieved from the API, using <b>SwiftyJSON</b>. <br/>
 
 Here is an example:
 
@@ -104,7 +105,7 @@ Here is an example:
 ```
  
 # View Models
-Each view model handles the data of their respective views. Each also holds a function to make an API call, and pass it into the NetworkManager, which handles the HTTP requests. I have selected which key to access in the JSON through the map function. <br/>
+Each view model handles the data of their respective views. Each also holds a function to make an API call, and pass it into the NetworkManager, which handles all the HTTP requests. I have selected which key to access in the JSON through the map function. <br/>
 
 Here is an example:
 
@@ -132,7 +133,7 @@ Here is an example:
 
 # Views
 ## Tab Bar
-This app has three main views, which the user can select through the tab bar. Our root view displays a list of collection cards that house the corresponding products of the same collection_id.
+This app has three main views, which the user can select from through the tab bar. Our root view displays a list of collection cards that house the corresponding products of the same collection_id.
 <br/>
 
 <img src="./Documentation/home-screen.png" width="200"/>
@@ -154,7 +155,7 @@ At the bottom of the view, a button will present the total cost of the items bef
 <img src="./Documentation/checkout-screen.png" width="200"/>
 ...
 
-The checkout view displays the data in a form layout in SwiftUI. This view will display the shipping locations, the price breakdown, and finally allow users to submit their orders. Each pricing detail has been calculated in seperate functions. 
+The checkout view displays the data in a form layout in SwiftUI. This view will display the shipping locations, the price breakdown, and finally allow users to submit their orders. Each pricing detail has been calculated in seperate functions. Once the user submits their order, the shopping cart will be clear out all the items from the list. 
 
 ## Search Bar
 The second view that can be selected in the tab bar is the search tab. This view stores the list of collection names, and upon accessing the searched name, it will direct the user to the given collection view with the list of products.
@@ -217,6 +218,13 @@ GeometryReader { geometry in
 ```
 
 … (view)
+
+## Lottie Animation
+This project uses a lottie animation, which is displayed when the shopping cart is empty. The robot animation adds to theme of the project!
+
+<img src="./Documentation/shoppingcart-screen.png" width="200"/>
+
+... (view)
 
 
 
