@@ -1,4 +1,4 @@
-# ShopifyStore - iOS
+# ShopifyStore - iOS internship challenge for fall 2020 submission
 ## By: Gio Lucero
 <p float="left" align="center">
 <img src="./Documentation/home-screen.png" width="200"/>
