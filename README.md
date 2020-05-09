@@ -1,14 +1,15 @@
 # ShopifyStore - iOS internship challenge for fall 2020 submission
 
 <p float="left" align="center">
+<img src="./Documentation/app-demo.gif" width="240"/>
 <img src="./Documentation/home-screen.png" width="200"/>
 <img src="./Documentation/darkmode-screen.png" width="200"/>
-<img src="./Documentation/profile-screen.png" width="200"/>
+<img src="./Documentation/second-demo.gif" width="240"/>
 </p>
 
 This project submission is for the Mobile Developer (iOS) intern challenge at Shopify for Fall 2020
 
-The project created is a native iOS mobile store that creates a shopping expereince from three given API’s from Shopify. 
+The project is a native iOS mobile store that creates a shopping expereince with three given API’s from Shopify. 
 
 # Features
 
@@ -38,10 +39,11 @@ The project created is a native iOS mobile store that creates a shopping experei
     * Image
     * Inventory remaining
     * Vendor of product
-* <b>'GET' button:</b>, which allows users to add the selected product to their shopping cart
+* <b>'GET' button:</b> which allows users to add the selected product to their shopping cart
     
 ## Shopping Cart Page
 <p float="left">
+<img src="./Documentation/shoppingcart-demo.gif" width="240"/>
 <img src="./Documentation/itemadded-screen.png" width="200"/>
 </p>
 
