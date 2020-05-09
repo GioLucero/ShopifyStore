@@ -31,9 +31,9 @@
 		84749C912466555F00524638 /* shoppingcartitems.png in Resources */ = {isa = PBXBuildFile; fileRef = 84749C902466555E00524638 /* shoppingcartitems.png */; };
 		84749C932466566C00524638 /* submit-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84749C922466566C00524638 /* submit-screen.png */; };
 		84749C9524665B5E00524638 /* getproduct-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84749C9424665B5E00524638 /* getproduct-screen.png */; };
-		84749C992467363C00524638 /* search-demo.mov in Resources */ = {isa = PBXBuildFile; fileRef = 84749C962467363B00524638 /* search-demo.mov */; };
-		84749C9A2467363C00524638 /* app-demo.mov in Resources */ = {isa = PBXBuildFile; fileRef = 84749C972467363C00524638 /* app-demo.mov */; };
-		84749C9D2467368900524638 /* shoppingcart-demo.mov in Resources */ = {isa = PBXBuildFile; fileRef = 84749C9C2467368900524638 /* shoppingcart-demo.mov */; };
+		84749C992467363C00524638 /* search-demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84749C962467363B00524638 /* search-demo.gif */; };
+		84749C9A2467363C00524638 /* app-demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84749C972467363C00524638 /* app-demo.gif */; };
+		84749C9D2467368900524638 /* shoppingcart-demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84749C9C2467368900524638 /* shoppingcart-demo.gif */; };
 		8491B4002423ED2E002A3C1B /* CollectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491B3FF2423ED2E002A3C1B /* CollectionCard.swift */; };
 		8491B4022426C4CA002A3C1B /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491B4012426C4CA002A3C1B /* CollectionViewModel.swift */; };
 		8491B4062426D77D002A3C1B /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491B4052426D77D002A3C1B /* ProductsViewModel.swift */; };
@@ -80,9 +80,9 @@
 		84749C902466555E00524638 /* shoppingcartitems.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoppingcartitems.png; sourceTree = "<group>"; };
 		84749C922466566C00524638 /* submit-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "submit-screen.png"; sourceTree = "<group>"; };
 		84749C9424665B5E00524638 /* getproduct-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "getproduct-screen.png"; sourceTree = "<group>"; };
-		84749C962467363B00524638 /* search-demo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "search-demo.mov"; sourceTree = "<group>"; };
-		84749C972467363C00524638 /* app-demo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "app-demo.mov"; sourceTree = "<group>"; };
-		84749C9C2467368900524638 /* shoppingcart-demo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "shoppingcart-demo.mov"; sourceTree = "<group>"; };
+		84749C962467363B00524638 /* search-demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "search-demo.gif"; sourceTree = "<group>"; };
+		84749C972467363C00524638 /* app-demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "app-demo.gif"; sourceTree = "<group>"; };
+		84749C9C2467368900524638 /* shoppingcart-demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "shoppingcart-demo.gif"; sourceTree = "<group>"; };
 		8491B3FF2423ED2E002A3C1B /* CollectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCard.swift; sourceTree = "<group>"; };
 		8491B4012426C4CA002A3C1B /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		8491B4052426D77D002A3C1B /* ProductsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
@@ -249,9 +249,9 @@
 		849EB60C244FF4A200E0357C /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				84749C972467363C00524638 /* app-demo.mov */,
-				84749C962467363B00524638 /* search-demo.mov */,
-				84749C9C2467368900524638 /* shoppingcart-demo.mov */,
+				84749C972467363C00524638 /* app-demo.gif */,
+				84749C962467363B00524638 /* search-demo.gif */,
+				84749C9C2467368900524638 /* shoppingcart-demo.gif */,
 				84749C8C2464CDFE00524638 /* darkmode-screen.png */,
 				84749C8D2464CDFE00524638 /* home-screen.png */,
 				84749C922466566C00524638 /* submit-screen.png */,
@@ -373,16 +373,16 @@
 				84749C9524665B5E00524638 /* getproduct-screen.png in Resources */,
 				84531D5B240AF4FC000581A7 /* LaunchScreen.storyboard in Resources */,
 				84F70EED245A0CBB00447427 /* shoppingcart-screen.png in Resources */,
-				84749C992467363C00524638 /* search-demo.mov in Resources */,
+				84749C992467363C00524638 /* search-demo.gif in Resources */,
 				84F70EF2245A0CBB00447427 /* itemadded-screen.png in Resources */,
 				84531D58240AF4FC000581A7 /* Preview Assets.xcassets in Resources */,
 				84531D55240AF4FC000581A7 /* Assets.xcassets in Resources */,
 				844FBE9F24579DCE00333D5A /* LottieRobot.json in Resources */,
-				84749C9D2467368900524638 /* shoppingcart-demo.mov in Resources */,
+				84749C9D2467368900524638 /* shoppingcart-demo.gif in Resources */,
 				84749C8E2464CDFE00524638 /* darkmode-screen.png in Resources */,
 				84F70EF1245A0CBB00447427 /* checkout-screen.png in Resources */,
 				84F70EF3245A0CBB00447427 /* search-screen.png in Resources */,
-				84749C9A2467363C00524638 /* app-demo.mov in Resources */,
+				84749C9A2467363C00524638 /* app-demo.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
