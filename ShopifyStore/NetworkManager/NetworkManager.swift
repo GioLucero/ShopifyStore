@@ -38,11 +38,11 @@ class NetworkManager {
         request.responseJSON { response in
             /// DispatchQueue executes a line of code in the main thread (primary source of execution)
             DispatchQueue.main.async {
-                /// once the request is executed, we want to let it run till a json response is found
+                /// Once the request is executed, we want to let it run till a json response is found
                 if let json = response.value {
                     print(json)
                     completion(JSON(json))
-                    /// if the json is not found, return an error
+                    /// If the json is not found, return an error
                 } else if let error = response.error {
                     completion(JSON(error.localizedDescription))
                 }

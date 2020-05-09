@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SearchTab: View {
-    /// test data for the search bar functionality
+    /// Test data for the search bar functionality
     let array = ["Aerodynamic", "Awesome", "Durable", "Enormous", "Ergonomic", "Fantastic", "Gorgeous", "Heavy Duty", "Incredible", "Intellegent", "Lightweight", "Mediocre", "Practical", "Rustic", "Sleek", "Small", "Synergistic"]
     @State private var searchText = ""
     @State private var showCancelButton: Bool = false
@@ -31,7 +31,7 @@ struct SearchTab: View {
                             print("onCommit")
                         }).foregroundColor(.primary)
 
-                        /// reuturn a string
+                        /// Reuturn a string
                         Button(action: {
                             self.searchText = ""
                         }) {

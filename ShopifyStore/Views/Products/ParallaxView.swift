@@ -14,10 +14,11 @@ import UIKit
 struct ParallaxView: View {
     /// Models that hold the products and collects data
     @ObservedObject var productsViewModel = ProductsViewModel.shared
+    /// Models that hold the collects data
     @ObservedObject var collectsViewModel = CollectsViewModel.shared
     /// Display a loading screen as default
     @State var isLoading = true
-    
+    /// Variables for the collection title, image and ID
     let title: String
     let parallaxImageName: UIImage
     let customCollectionID: Int

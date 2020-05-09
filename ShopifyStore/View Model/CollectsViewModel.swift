@@ -24,7 +24,7 @@ class CollectsViewModel: ObservableObject {
         }
     }
     
-    /// fetching the collect data 
+    /// Fetching the collect data 
     public func getCollectData(withCollectionId collectionId: Int, completion: @escaping ([Int]) -> Void) {
         /// Passing in parameters for getCardData funcrtion 
         let parameter: Parameters = [

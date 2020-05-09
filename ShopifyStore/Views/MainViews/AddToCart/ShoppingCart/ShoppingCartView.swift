@@ -16,7 +16,7 @@ struct ShoppingCartView: View {
     
     var body: some View {
         NavigationView {
-            
+            /// Displays the lottie animation when shopping cart is empty
             if shoppingCart.items.isEmpty {
                 VStack(alignment: .center) {
                     LottieView(fileName: "LottieRobot")

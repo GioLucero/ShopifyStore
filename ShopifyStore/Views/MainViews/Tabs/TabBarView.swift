@@ -13,7 +13,7 @@ struct TabBar: View {
     /// Allows us to access shoppingCart data
     @EnvironmentObject var shoppingCart: ShoppingCart
     
-    /// used for styling the added item notification to shopping cart tab
+    /// Used for styling the added item notification to shopping cart tab
     @State private var badgeCount: Int = 1
     private var badgePosition: CGFloat = 2
     private var tabsCount: CGFloat = 4

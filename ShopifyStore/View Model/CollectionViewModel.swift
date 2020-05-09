@@ -11,7 +11,7 @@ import SwiftUI
 import Combine
 
 /// Handles all the data for the collection views
-/// Any changes in this file will update other views - SOURCE OF TRUTH
+/// Any changes in this file will update other views 
 class CollectionViewModel: ObservableObject {
     /// Shared singleton of the global instance of CollectionViewModel
     static let shared = CollectionViewModel()

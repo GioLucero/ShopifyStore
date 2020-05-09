@@ -12,7 +12,7 @@ import Combine
 import Alamofire
 
 /// Handles all the data for product cards
-/// Any changes in this file will update other views - SOURCE OF TRUTH
+/// Any changes in this file will update other views 
 class ProductsViewModel: ObservableObject {
     /// Shared singleton of the global instance of CollectionViewModel
     static let shared = ProductsViewModel()

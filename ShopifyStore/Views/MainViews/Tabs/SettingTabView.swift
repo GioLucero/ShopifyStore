@@ -10,15 +10,11 @@ import SwiftUI
 
 /// Settings tab within the tab bar
 struct SettingsTab: View {
-
+    /// Default settings for settings options
    @State var receive = false
-   @State var number = 1
-   @State var selection = 1
    @State var date = Date()
    @State var email = ""
    @State var submit = false
-    
-    let array = ["Aerodynamic", "Awesome", "Durable", "Enormous", "Ergonomic", "Fantastic", "Gorgeous", "Heavy Duty", "Incredible", "Intellegent", "Lightweight", "Mediocre", "Practical", "Rustic", "Sleek", "Small", "Synergistic"]
 
    var body: some View {
       NavigationView {
