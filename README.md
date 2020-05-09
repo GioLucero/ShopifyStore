@@ -41,7 +41,7 @@ The project created is a native iOS mobile store that creates a shopping experei
     
 ## Shopping Cart Page
 <p float="left" align="center">
-<img src="./Documentation/shoppingcartitems-screen.png" width="150"/>
+<img src="./Documentation/itemadded-screen.png" width="150"/>
 </p>
 
 * <b>Unique view:</b> when shopping cart contains 0 products
