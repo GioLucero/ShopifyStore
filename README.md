@@ -13,7 +13,7 @@ The project created is a native iOS mobile store that creates a shopping experei
 # Features
 
 ## Collections Page
-<p float="left" align="center">
+<p float="left">
 <img src="./Documentation/home-screen.png" width="150"/>
 <img src="./Documentation/parallax-screen.png" width="150"/>
 </p>
@@ -23,11 +23,12 @@ The project created is a native iOS mobile store that creates a shopping experei
 
 
 ## Products Page
-<p float="left" align="center">
+<p float="left">
 <img src="./Documentation/parallax-screen.png" width="150"/>
 <img src="./Documentation/products-screen.png" width="150"/>
 <img src="./Documentation/getproduct-screen.png" width="150"/>
 </p>
+
 
 * <b>Parallax Banner:</b> displays information which describes the collection selected
 * <b>List of products:</b> that belong to the collection (previously selected by the user)
@@ -40,7 +41,7 @@ The project created is a native iOS mobile store that creates a shopping experei
 * <b>'GET' button:</b>, which allows users to add the selected product to their shopping cart
     
 ## Shopping Cart Page
-<p float="left" align="center">
+<p float="left">
 <img src="./Documentation/itemadded-screen.png" width="150"/>
 </p>
 
@@ -53,7 +54,7 @@ The project created is a native iOS mobile store that creates a shopping experei
     * When selected, the user will be navigated to checkout flow
     
 ## Checkout Flow
-<p float="left" align="center">
+<p float="left">
 <img src="./Documentation/checkout-screen.png" width="150"/>
 <img src="./Documentation/submit-screen.png" width="150"/>
 </p>
