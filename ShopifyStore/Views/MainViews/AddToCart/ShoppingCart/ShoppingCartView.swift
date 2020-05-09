@@ -64,7 +64,7 @@ struct ShoppingCartView: View {
                                 .fontWeight(.bold)
                                 .frame(width: 300, height: 50)
                                 .background(Color(.sRGB, red: 128/255, green: 198/255, blue: 111/255).opacity(1))
-                                .cornerRadius(18)
+                                .cornerRadius(25)
                                 .padding(.vertical, 15)
                         })
                     }
