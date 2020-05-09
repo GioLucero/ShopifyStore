@@ -1,9 +1,9 @@
 # ShopifyStore - iOS internship challenge for fall 2020 submission
 
 <p float="left" align="center">
-<img src="./Documentation/home-screen.png" width="150"/>
-<img src="./Documentation/darkmode-screen.png" width="150"/>
-<img src="./Documentation/profile-screen.png" width="150"/>
+<img src="./Documentation/home-screen.png" width="200"/>
+<img src="./Documentation/darkmode-screen.png" width="200"/>
+<img src="./Documentation/profile-screen.png" width="200"/>
 </p>
 
 This project submission is for the Mobile Developer (iOS) intern challenge at Shopify for Fall 2020
@@ -14,8 +14,8 @@ The project created is a native iOS mobile store that creates a shopping experei
 
 ## Collections Page
 <p float="left">
-<img src="./Documentation/home-screen.png" width="150"/>
-<img src="./Documentation/parallax-screen.png" width="150"/>
+<img src="./Documentation/home-screen.png" width="200"/>
+<img src="./Documentation/parallax-screen.png" width="200"/>
 </p>
 
 * <b>Header card:</b> displays amount of collections in the store
@@ -24,9 +24,9 @@ The project created is a native iOS mobile store that creates a shopping experei
 
 ## Products Page
 <p float="left">
-<img src="./Documentation/parallax-screen.png" width="150"/>
-<img src="./Documentation/products-screen.png" width="150"/>
-<img src="./Documentation/getproduct-screen.png" width="150"/>
+<img src="./Documentation/parallax-screen.png" width="200"/>
+<img src="./Documentation/products-screen.png" width="200"/>
+<img src="./Documentation/getproduct-screen.png" width="200"/>
 </p>
 
 
@@ -42,7 +42,7 @@ The project created is a native iOS mobile store that creates a shopping experei
     
 ## Shopping Cart Page
 <p float="left">
-<img src="./Documentation/itemadded-screen.png" width="150"/>
+<img src="./Documentation/itemadded-screen.png" width="200"/>
 </p>
 
 * <b>Unique view:</b> when shopping cart contains 0 products
@@ -55,8 +55,8 @@ The project created is a native iOS mobile store that creates a shopping experei
     
 ## Checkout Flow
 <p float="left">
-<img src="./Documentation/checkout-screen.png" width="150"/>
-<img src="./Documentation/submit-screen.png" width="150"/>
+<img src="./Documentation/checkout-screen.png" width="200"/>
+<img src="./Documentation/submit-screen.png" width="200"/>
 </p>
 
 * <b>Option</b> to ship to multiple Shopify offices
