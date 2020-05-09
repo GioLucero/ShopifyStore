@@ -17,13 +17,13 @@ The project created is a native iOS mobile store that creates a shopping experei
 <img src="./Documentation/home-screen.png" width="150"/>
 
 * <b>Header card:</b> displays amount of collections in the store
-* <b>List of multiple collectionc cards:</b> when selecting a specific collection, the user is navigated to a list of products that are apart of the selected collection
+* <b>List of collection cards:</b> when selecting a specific collection, the user is navigated to a list of products that are apart of the selected collection
 
 
 ## Products Page
 <img src="./Documentation/products-screen.png" width="150"/>
 
-* <b>Parallax Banner:</b> displays information which describes the collection selected.
+* <b>Parallax Banner:</b> displays information which describes the collection selected
 * <b>List of products:</b> that belong to the collection (previously selected by the user)
 * <b>Product card:</b> contains the following information: 
     * Name of product
@@ -58,7 +58,7 @@ The project created is a native iOS mobile store that creates a shopping experei
 * <b>Confirmation prompt:</b> recieves prompt when user submits order and shopping cart/checkout flow is cleared
 
 # File Architecture - Model View ViewModel (MVVM)
-This project is built using SwiftUIf framework. 
+This project is built using SwiftUI framework. 
  
 This project uses the following third-party Swift packages and dependencies: 
 * Alamofire: https://github.com/Alamofire/Alamofire
