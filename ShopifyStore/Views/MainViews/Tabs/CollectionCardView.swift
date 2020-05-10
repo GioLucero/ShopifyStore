@@ -35,7 +35,7 @@ struct CollectionCardView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(maxWidth: 200)
                         .frame(height: 200, alignment: .top)
-                        .background(Image("background1")
+                        .background(Image("Background1")
                             .resizable()
                             .foregroundColor(.white)
                             .frame(width: 250, height: 150)
